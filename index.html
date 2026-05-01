@@ -1,0 +1,2227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pickt | Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="img/Clip path group.png">  
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="bootstrap-icons-1.11.3/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <nav style="padding-right:0; margin-right:0;" class="flex fixed z-40 w-full bg-white border-b md:border-none items-stretch">
+
+        <!-- Logo + desktop search -->
+        <div class="flex items-center py-5 pl-5 md:pl-10 lg:px-16 shrink-0">
+            <a href="#top">
+                <img src="img/logotext.svg.png" alt="Logo" class="w-20 md:w-24 lg:w-32 xl:w-28">
+            </a>
+            <div class="hidden lg:flex xl:flex items-center px-4">
+                <div class="relative flex items-center lg:w-56 xl:w-80 border border-transparent 
+                focus-within:border-[#5E48DB] rounded-xl px-3 lg:py-1.5 xl:py-2 gap-2 transition-all duration-300">
+                    <i class="bi bi-search text-[#5E48DB] text-lg"></i>
+                    <input type="text" id="searchInput" class="outline-none bg-transparent text-md flex-1">
+                    <span id="placeholder-text" class="absolute pointer-events-none text-gray-400 text-lg pl-7">
+                        search for <span id="dynamic-word" class="text-[#5E48DB]">technologists</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop nav links -->
+        <div class="hidden lg:flex lg:space-x-5 xl:space-x-7 items-center py-5 pr-10 lg:pr-16 font-medium ml-auto shrink-0">
+            <div class="relative group">
+                <a href="#about" class="text-nowrap lg:text-md xl:text-lg">
+                    About Pickt
+                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
+            <div class="relative group">
+                <a href="#faqs" class="text-nowrap text-lg">
+                    FAQs
+                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 
+                    group-hover:w-full"></span>
+                </a>
+            </div>
+            <div class="relative group">
+                <a href="contact.html" class="text-nowrap text-lg">
+                    Contact us
+                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 
+                    group-hover:w-full"></span>
+                </a>
+            </div>
+            <div class="text-3xl font-light text-[#B5B3AE]">
+                |
+            </div>
+            <div class="relative group">
+                <a href="sign-in.html" class="text-nowrap text-lg text-[#5E48DB]">
+                    Log in
+                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-[#5E48DB] transition-all duration-300
+                    group-hover:w-full"></span>
+                </a>
+            </div>
+            <div>
+                <a href="sign-up.html">
+                    <button class="rounded-2xl bg-[#5E48DB] py-3 px-7 lg:px-8 text-white text-lg text-nowrap
+                    transition-all duration-300 hover:scale-90 active:scale-90 hover:bg-[#8a79e8]">
+                        Sign up
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile/Tablet right side controls -->
+        <div class="flex lg:hidden items-stretch flex-1">
+
+            <!-- Search bar — iPad mini only -->
+            <div class="hidden md:flex flex-1 items-center px-4">
+                <div class="flex flex-1 items-center border border-transparent focus-within:border-[#5E48DB] rounded-lg 
+                px-3 py-1.5 gap-2 transition-all duration-300">
+                    <input type="text" placeholder="Search..." class="outline-none bg-transparent text-md flex-1 w-full">
+                    <i class="bi bi-search text-[#5E48DB] text-lg"></i>
+                </div>
+            </div>
+
+            <!-- Search — mobile only -->
+            <div class="flex md:hidden items-center px-1 ml-auto">
+                <div class="flex flex-row-reverse items-center border px-2 border-transparent rounded-lg
+                focus-within:border-[#5E48DB]">
+                    <button type="button" id="mobileSearchIcon" 
+                    class="flex items-center justify-center w-10 h-10 text-[#5E48DB]">
+                        <i class="bi bi-search text-lg pointer-events-none"></i>
+                    </button>
+                    <input id="mobileSearchInput" type="text" placeholder="Search..." 
+                    class="outline-none bg-transparent text-sm transition-all duration-300" 
+                    style="width:0; opacity:0; transition: width 0.3s ease, opacity 0.3s ease;">
+                </div>
+            </div>
+
+            <!-- Hamburger -->
+            <button id="hamburger-btn" 
+            class="bg-[#5E48DB] px-5 flex flex-col justify-center gap-1.5 self-stretch shrink-0">
+                <span class="block w-8 h-0.5 bg-white/60"></span>
+                <span class="block w-8 h-0.5 bg-white/60"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 z-50 bg-[#5E48DB] flex-col flex opacity-0 pointer-events-none 
+        overflow-hidden">
+
+            <!-- Top bar -->
+            <div class="flex items-stretch border-b border-white/20 md:border-none">
+                <div class="flex items-center pl-5 md:pl-10 py-5 shrink-0">
+                    <a onclick="handleNavClick('top')">
+                        <img src="img/logotext.svg.png" alt="Logo" class="w-20 md:w-28 brightness-0 invert">
+                    </a>
+                </div>
+                <div class="flex items-stretch flex-1 min-w-0">
+
+                    <!-- Search bar — iPad mini only -->
+                    <div class="hidden md:flex flex-1 items-center px-4">
+                        <div class="flex flex-1 items-center border border-white/60 focus-within:border-white rounded-lg 
+                        px-3 py-1.5 gap-2 transition-all duration-300">
+                            <input type="text" placeholder="Search..." class="outline-none bg-transparent text-md 
+                            text-white placeholder-white/50 flex-1 w-full">
+                            <i class="bi bi-search text-white text-lg"></i>
+                        </div>
+                    </div>
+
+                    <!-- Search — mobile only inside menu -->
+                    <div id="menu-search-wrap" class="flex md:hidden items-center px-1">
+                        <div class="flex flex-row-reverse items-center border px-2 border-transparent rounded-lg
+                        focus-within:border-white/60">
+                            <button type="button" id="menuSearchIcon" 
+                            class="flex items-center justify-center w-10 h-10 text-white">
+                                <i class="bi bi-search text-lg pointer-events-none"></i>
+                            </button>
+                            <input id="menuSearchInput" type="text" placeholder="Search..." 
+                            class="outline-none bg-transparent text-sm text-white placeholder-white/50 transition-all 
+                            duration-300" style="width:0; opacity:0; transition: width 0.3s ease, opacity 0.3s ease;">
+                        </div>
+                    </div>
+
+                    <!-- Close button -->
+                    <button id="close-menu" class="bg-white px-4 flex items-center justify-center self-stretch shrink-0 
+                    ml-auto">
+                        <i class="bi bi-x text-4xl text-[#5E48DB]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Menu links -->
+            <div class="flex flex-col px-5 md:px-10 mt-14 md:mt-20 mb-[120px] md:mb-[170px] gap-5 md:gap-9">
+                <a onclick="handleNavClick('about')" class="menu-item text-white text-2xl md:text-4xl font-semibold 
+                cursor-pointer">
+                    About Pickt
+                </a>
+                <a onclick="handleNavClick('faqs')" class="menu-item text-white text-2xl md:text-4xl font-semibold 
+                cursor-pointer">
+                    FAQs
+                </a>
+                <a href="contact.html" class="menu-item text-white text-2xl md:text-4xl font-semibold cursor-pointer">
+                    Contact us
+                </a>
+                <div class="flex gap-4 mt-12 justify-center">
+                    <a href="sign-in.html">
+                        <button class="menu-item border border-white/60 text-white rounded-xl py-3 md:py-4 px-[51px] 
+                        md:px-[75px] text-sm md:text-md font-semibold text-nowrap">
+                            Log In
+                        </button>
+                    </a>
+                    <a href="sign-up.html" class="text-center">
+                        <button class="menu-item border border-white text-[#5E48DB] bg-white rounded-xl py-3 md:py-4 
+                        px-[51px] md:px-[75px] text-md font-semibold text-nowrap">
+                            Sign Up
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom: socials + links -->
+            <div class="menu-item px-8 pb-10 md:pb-20 flex flex-col items-center gap-6">
+                <div class="flex gap-5">
+                    <a href="https://www.linkedin.com/company/pickt/">
+                        <i class="bi bi-linkedin text-white text-xl md:text-2xl"></i>
+                    </a>
+                    <a href="https://x.com/pickthq?s=21">
+                        <i class="bi bi-twitter text-white text-xl md:text-2xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/pickthq?igsh=aW8ycm50a3dyeDl0">
+                        <i class="bi bi-instagram text-white text-xl md:text-2xl"></i>
+                    </a>
+                    <a href="http://www.youtube.com/@pickthq">
+                        <i class="bi bi-youtube text-white text-xl md:text-2xl"></i>
+                    </a>
+                </div>
+                <div class="flex gap-6">
+                    <a href="" class="text-white text-sm md:text-2xl opacity-70">
+                        Terms of Service
+                    </a>
+                    <a href="" class="text-white text-sm md:text-2xl opacity-70">
+                        Privacy Policy
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page loader -->
+    <section id="page-loader" style="position:fixed; inset:0; z-index:9999; background:white; overflow:hidden;">
+
+        <!-- Counter -->
+        <div id="counter-wrap" style="position:absolute; inset:0; display:flex; align-items:center; 
+        justify-content:center; z-index:2;">
+            <span id="loader-count" class="text-xl text-[#5E48DB]">
+                000
+            </span>
+        </div>
+
+        <!-- Color panels -->
+        <div style="position:absolute; inset:0; z-index:1;">
+            <div id="panel-1" style="position:absolute; top:0; right:0; height:100%; width:0%; background:#5b4fcf; 
+            transition:width 0.6s ease-out, right 0.6s ease-out;"></div>
+            <div id="panel-2" style="position:absolute; top:0; right:0; height:100%; width:0%; background:#29b8e0; 
+            transition:width 0.6s ease-out, right 0.6s ease-out;"></div>
+            <div id="panel-3" style="position:absolute; top:0; right:0; height:100%; width:0%; background:#f5a623; 
+            transition:width 0.6s ease-out, right 0.6s ease-out;"></div>
+            <div id="panel-4" style="position:absolute; top:0; right:0; height:100%; width:0%; background:#22b573; 
+            transition:width 0.6s ease-out, right 0.6s ease-out;"></div>
+
+            <!-- text centered -->
+            <div style="position:absolute; inset:0; z-index:10; display:flex; align-items:center; 
+            justify-content:center; pointer-events:none;">
+                <div style="text-align:left;">
+                    <p id="text-meet" class="text-white text-4xl md:text-5xl xl:text-7xl font-bold opacity-0 transition-opacity 
+                    duration-300 ease-in-out drop-shadow-md">
+                        meet
+                    </p>
+                    <p id="text-talk" class="text-white text-4xl md:text-5xl xl:text-7xl font-bold opacity-0 transition-opacity 
+                    duration-300 ease-in-out [text-shadow:0_2px_10px_rgba(0,0,0,0.2)]">
+                        talk
+                    </p>
+                    <p id="text-know" class="text-white text-4xl md:text-5xl xl:text-7xl font-bold opacity-0 transition-opacity 
+                    duration-300 ease-in-out [text-shadow:0_2px_10px_rgba(0,0,0,0.2)]">
+                        know
+                    </p>
+                    <p id="text-thrive" class="text-white text-4xl md:text-5xl xl:text-7xl font-bold opacity-0 transition-opacity 
+                    duration-300 ease-in-out [text-shadow:0_2px_10px_rgba(0,0,0,0.2)]">
+                        thrive
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero section -->
+    <section id="top" class="px-5 md:px-10 lg:px-16 min-h-[540px] md:h-[800px] lg:h-[1050px] xl:h-[700px]">
+        <div class="flex relative justify-center lg:space-x-9 xl:justify-between">
+            <div class="pt-36 lg:pt-64 xl:pt-36 hidden lg:block">
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <img src="img/chat.png.png" alt="img" class="lg:w-72 xl:w-52">
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200" class="absolute z-70 lg:w-44 xl:w-60 lg:-mt-20
+                 xl:-mt-28">
+                    <img src="img/Group (5).png" alt="logo">
+                </div>
+                <div data-aos="fade-up" data-aos-delay="400" class="lg:mt-16 xl:mt-0">
+                    <img src="img/broadcast.png.png" alt="img" class="w-52">
+                </div>
+                <div data-aos="fade-up" data-aos-delay="400" class="absolute z-70 lg:w-40 xl:w-60 lg:-mt-12
+                xl:-mt-24 lg:-ml-6 xl:-ml-12">
+                    <img src="img/Group (6).png" alt="logo">
+                </div>
+            </div>
+            <div class="pt-36 md:pt-60 lg:pt-72 xl:pt-28 text-center">
+                <div data-aos="fade-up" data-aos-delay="200" class="relative z-10 -mb-2 lg:-mb-6 inline-block 
+                bg-[#EFEDFC] text-2xl md:text-4xl lg:text-5xl xl:text-6xl rounded-2xl lg:rounded-3xl px-3 lg:px-9 py-3 
+                lg:py-8 text-[#5E48DB] font-semibold">
+                    Connect
+                </div>
+                <div data-aos="fade-up" data-aos-delay="400" class="bg-[#FFF8EB] text-2xl md:text-3xl lg:text-5xl 
+                xl:text-6xl text-[#F8AC12] font-semibold rounded-2xl lg:rounded-3xl px-8 lg:px-7 py-4 lg:py-7 xl:py-10 
+                lg:w-full w-full whitespace-nowrap">
+                    express your creativity
+                </div>
+                <div data-aos="fade-up" data-aos-delay="600" class="bg-[#E6F6F0] text-2xl md:text-3xl lg:text-5xl 
+                xl:text-6xl text-[#04AD68] font-semibold rounded-2xl lg:rounded-3xl px-8 lg:px-7 py-4 lg:py-7 xl:py-10 
+                w-full whitespace-nowrap">
+                    share your knowledge
+                </div>
+            </div>
+            <div class="pt-36 lg:pt-64 xl:pt-36 hidden lg:block">
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <img src="img/video.png.png" alt="img" class="lg:w-72 xl:w-52">
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200" class="absolute z-70 xl:w-60 lg:-mt-12 
+                xl:-mt-24 -ml-6">
+                    <img src="img/video_card.svg.png" alt="logo">
+                </div>
+                <div data-aos="fade-up" data-aos-delay="400" class="lg:mt-16 xl:mt-0">
+                    <img src="img/audio.png.png" alt="img" class="lg:w-72 xl:w-52">
+                </div>
+                <div data-aos="fade-up" data-aos-delay="400" class="absolute z-70 xl:w-60 lg:-mt-14 xl:-mt-28 -ml-16">
+                    <img src="img/audio_card.svg.png" alt="logo">
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col justify-center text-center">
+            <div data-aos="fade-up" data-aos-delay="300" class="mt-8 lg:mt-3 mb-6">
+                <p class="text-lg text-[#6D6C75]">
+                    Pickt is a social platform that allows people from <br class="hidden md:block"> all
+                    walks of life to connect, share information and <br class="hidden md:block"> get paid for their time.
+                </p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="600">
+                <a href="sign-in.html" class="text-nowrap">
+                    <button class="rounded-2xl bg-[#5E48DB] font-semibold py-3 px-7 lg:px-10 text-white text-lg 
+                    transition-all duration-300 hover:scale-90 active:scale-90 hover:bg-[#8a79e8] slider-btn">
+                        Get Started
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll button at very top of purple section -->
+    <div id="scroll-btn" class="relative flex lg:hidden items-center pl-5 md:pl-10">
+        <button onclick="document.getElementById('next-section').scrollIntoView({behavior:'smooth'})"
+        class="absolute z-20 top-32 w-14 h-14 rounded-full bg-[#EFEDFB] flex items-center justify-center"
+        style="touch-action:manipulation; -webkit-tap-highlight-color:transparent;">
+            <i class="bi bi-arrow-down text-[#8a79e8] text-2xl animate-arrow"></i>
+        </button>
+    </div>
+        
+    <!-- Section-2 -->
+    <section class="bg-[#5E48DB] mt-[120px] pb-14 md:pb-20">
+        <div class="relative px-7 md:px-10 lg:pl-16 lg:pr-44 flex flex-col lg:flex-row">
+            <div class="-ml-3 md:pl-7 xl:pl-14">
+                <div class="text-4xl md:text-4xl lg:text-5xl xl:text-7xl text-start text-white font-semibold pt-24">
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        meet
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="400">
+                        talk
+                    </div> 
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        know
+                    </div>
+                    <div id="next-section" data-aos="fade-up" data-aos-delay="800" class="text-[#FAD68D]">
+                        thrive
+                    </div> 
+                </div>
+            </div>
+
+            <!-- Background circles -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none hidden lg:block">
+                <div class="circle circle-1"></div>
+                <div class="circle circle-2"></div>
+                <div class="circle circle-3"></div>
+            </div>
+
+            <img src="img/exclaim.svg fill.png" alt="exclaim" class="absolute pointer-events-none z-0 h-[36%] md:h-[44%] 
+            lg:h-[48%] xl:h-[60%] left-[25%] md:left-[18%] lg:left-[18%] xl:left-[20%] top-[16%] md:top-[22%] lg:top-[28%]
+            xl:top-[36%] -translate-y-1/2" style="opacity: 0.6;">
+
+            <div class="relative z-10 mt-20 lg:mb-56 lg:mt-44 xl:mt-56 md:px-7 lg:px-5 xl:px-10 lg:ml-40 lg:mr-6 xl:ml-80 
+            border border-2 border-black rounded-[30px] xl:rounded-[40px] md:mx-auto xl:mx-auto bg-[#F8AB11]">
+                <div data-aos="fade-up" class="text-white text-xl lg:text-2xl text-center xl:text-2xl font-semibold 
+                py-6 lg:py-6 xl:py-10">
+                    Curate a community of your <br class="block md:hidden xl:block"> favorite <br class="hidden md:block 
+                    lg:hidden"> people. Meet with <br class="block md:hidden xl:block"> beautiful minds. 
+                    <br class="hidden lg:block xl:hidden"> Get <br class="hidden md:block lg:hidden"> value 
+                    <br class="block md:hidden"> for <br class="hidden xl:block"> your time.
+                </div>
+            </div>
+        </div>
+    
+        <!-- Row 1-->
+        <div class="overflow-hidden w-full py-2 mt-24 lg:mt-0">
+            <div class="marquee-left flex flex-shrink-0" style="width: max-content; gap: 16px;">
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/Lawyers.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Lawyers
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/camera.svg fill.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Content Creators
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/musician.svg fill.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Musicians
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/startup.svg fill.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Startup Founders
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/fintech.svg fill.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Fintech Experts
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/arts.svg fill.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Actors
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/Healthcare Professionals.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Healthcare Professionals
+                    </span>
+                </div>
+
+                <!-- duplicate -->
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/Lawyers.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Lawyers
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/camera.svg fill.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Content Creators
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/musician.svg fill.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Musicians
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/startup.svg fill.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Startup Founders
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/fintech.svg fill.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Fintech Experts
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/arts.svg fill.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Actors
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/Healthcare Professionals.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Healthcare Professionals
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="overflow-hidden w-full py-5">
+            <div class="marquee-right flex flex-shrink-0" style="width: max-content; gap: 16px;">
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/Healthcare Professionals.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Healthcare Professionals
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/arts.svg fill.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Actors
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/fintech.svg fill.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Fintech Experts
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/startup.svg fill.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Startup Founders
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/musician.svg fill.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Musicians
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/camera.svg fill.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Content Creators
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/Lawyers.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Lawyers
+                    </span>
+                </div>
+
+                <!-- duplicate -->
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/Healthcare Professionals.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Healthcare Professionals
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/arts.svg fill.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Actors
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/fintech.svg fill.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Fintech Experts
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/startup.svg fill.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Startup Founders
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/musician.svg fill.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Musicians
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/camera.svg fill.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Content Creators
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-full px-6 py-5 font-semibold text-[#04AD68] 
+                flex-shrink-0" style="white-space:nowrap;">
+                    <img src="img/Lawyers.png" alt="emoji" class="w-7">
+                    <span class="text-2xl">
+                        Lawyers
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Consultants-section  -->
+    <section class="bg-[#020813]">
+        <div class="px-5 md:px-10 lg:px-16 py-16 lg:py-24">
+            <div class="flex justify-between">
+                <h1 class="text-white text-4xl lg:text-5xl xl:text-7xl font-bold md:pl-7 lg:px-9">
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        Choose from
+                    </div> 
+                    <div data-aos="fade-up" data-aos-delay="400">
+                        <span class="text-[#2DC3F5]">thousands of</span>
+                    </div> 
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <span class="text-[#2DC3F5]">experts</span> to
+                    </div> 
+                    <div data-aos="fade-up" data-aos-delay="800">
+                        consult with
+                    </div>
+                </h1>
+                <div class="flex items-end space-x-5">
+                    <button class="border border-gray-500 rounded-full w-20 h-20 transition-transform hidden lg:block
+                    duration-300 hover:bg-[#2DC3F5] hover:scale-90">
+                        <i class="bi bi-arrow-left text-white text-2xl"></i>
+                    </button>
+                    <button class="border border-gray-500 rounded-full w-20 h-20 transition-transform duration-300
+                     hover:bg-[#2DC3F5] hover:scale-90 hidden lg:block">
+                        <i class="bi bi-arrow-right text-white text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-section w-full overflow-hidden pl-5 md:pl-10 lg:pl-16">
+            <div id="scrollRow" class="scroll-track flex flex-row gap-4 overflow-x-auto overflow-y-hidden py-4 px-2 
+            cursor-grab select-none">
+
+                <!-- CARD 1 -->
+                <div data-aos-delay="200" class="min-w-[220px] max-w-[270px] flex-shrink-0 bg-white
+                rounded-3xl p-2 overflow-hidden shadow-md">
+                    <div> 
+                        <div class="bg-cover h-60 flex items-end justify-center rounded-3xl" 
+                        style="background-image: url('img/Group 43795 (1).png');">
+                            <div class="bg-white flex items-center text-sm mb-3 pl-2 pr-3 py-1 rounded-full font-semibold">
+                                <span class="w-6 h-6 items-center flex justify-center rounded-full bg-[#2DC3F5] mr-2">
+                                    <i class="bi bi-backpack text-white text-sm"></i>
+                                </span>
+                                Project Manager
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="flex items-center">
+                                <h6 class="text-md font-semibold truncate">
+                                    Malaika Ademola-Majekodunmi...
+                                </h6>
+                                <img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/NG.svg" alt="logo"
+                                 class="w-4 h-4">
+                            </div>
+                            <div class=" flex items-center mt-2">
+                                <div class="w-7 h-7 items-center flex justify-center mr-3 rounded-full bg-[#F8AC12]">
+                                    <i class="bi bi-telephone text-white text-sm"></i>
+                                </div>
+                                <span class="text-lg font-semibold items-center">$2+</span> 
+                                <span class="text-sm text-[#B5B3AE]">/min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div data-aos="fade-left" data-aos-delay="400" class="min-w-[270px] max-w-[270px] flex-shrink-0 bg-white
+                rounded-3xl p-2 overflow-hidden shadow-md">
+                    <div> 
+                        <div class="bg-cover h-60 flex items-end justify-center rounded-3xl" 
+                        style="background-image: url('img/Dr. Augusta Okoro.png');">
+                            <div class="bg-white flex items-center text-sm mb-3 pl-2 pr-3 py-1 rounded-full font-semibold">
+                                <span class="w-6 h-6 items-center flex justify-center rounded-full bg-[#2DC3F5] mr-2">
+                                    <i class="bi bi-backpack text-white text-sm"></i>
+                                </span>
+                                Medical Doctor
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="flex items-center space-x-2">
+                                <h6 class="text-md font-semibold truncate">
+                                    Dr. Augusta Okoro
+                                </h6>
+                                <img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/GB.svg" alt="logo"
+                                 class="w-4 h-4">
+                            </div>
+                            <div class=" flex items-center mt-2">
+                                <div class="w-7 h-7 items-center flex justify-center mr-3 rounded-full bg-[#F8AC12]">
+                                    <i class="bi bi-telephone text-white text-sm"></i>
+                                </div>
+                                <span class="text-lg font-semibold items-center">$2+</span> 
+                                <span class="text-sm text-[#B5B3AE]">/min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div data-aos="fade-left" data-aos-delay="600" class="min-w-[270px] max-w-[270px] flex-shrink-0 bg-white
+                rounded-3xl p-2 overflow-hidden shadow-md">
+                    <div> 
+                        <div class="bg-cover h-60 flex items-end justify-center rounded-3xl" 
+                        style="background-image: url('img/Rectangle 5890.png');">
+                            <div class="bg-white flex items-center text-sm mb-3 pl-2 pr-3 py-1 rounded-full font-semibold">
+                                <span class="w-6 h-6 items-center flex justify-center rounded-full bg-[#2DC3F5] mr-2">
+                                    <i class="bi bi-backpack text-white text-sm"></i>
+                                </span>
+                                Supply Chain Expert
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="flex items-center space-x-2">
+                                <h6 class="text-md font-semibold truncate">
+                                    Dr. Chandra Seepana, PhD.
+                                </h6>
+                                <img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/GB.svg" alt="logo"
+                                 class="w-4 h-4">
+                            </div>
+                            <div class=" flex items-center mt-2">
+                                <div class="w-7 h-7 items-center flex justify-center mr-3 rounded-full bg-[#F8AC12]">
+                                    <i class="bi bi-telephone text-white text-sm"></i>
+                                </div>
+                                <span class="text-lg font-semibold items-center">$4+</span> 
+                                <span class="text-sm text-[#B5B3AE]">/min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div data-aos="fade-left" data-aos-delay="800" class="min-w-[270px] max-w-[270px] flex-shrink-0 bg-white
+                rounded-3xl p-2 overflow-hidden shadow-md">
+                    <div> 
+                        <div class="bg-cover h-60 flex items-end justify-center rounded-3xl" 
+                        style="background-image: url('img/Rectangle 5891.png');">
+                            <div class="bg-white flex items-center text-sm mb-3 pl-2 pr-3 py-1 rounded-full font-semibold">
+                                <span class="w-6 h-6 items-center flex justify-center rounded-full bg-[#2DC3F5] mr-2">
+                                    <i class="bi bi-backpack text-white text-sm"></i>
+                                </span>
+                                Project Manager
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="flex items-center space-x-2">
+                                <h6 class="text-md font-semibold truncate">
+                                    Maverick Owen
+                                </h6>
+                                <img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/PH.svg" alt="logo"
+                                 class="w-4 h-4">
+                            </div>
+                            <div class=" flex items-center mt-2">
+                                <div class="w-7 h-7 items-center flex justify-center mr-3 rounded-full bg-[#F8AC12]">
+                                    <i class="bi bi-telephone text-white text-sm"></i>
+                                </div>
+                                <span class="text-lg font-semibold items-center">$3+</span> 
+                                <span class="text-sm text-[#B5B3AE]">/min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 5 -->
+                <div data-aos="fade-left" data-aos-delay="1000" class="min-w-[270px] max-w-[270px] flex-shrink-0 
+                bg-white rounded-3xl p-2 overflow-hidden shadow-md">
+                    <div> 
+                        <div class="bg-cover h-60 flex items-end justify-center rounded-3xl" 
+                        style="background-image: url('img/imgss.png');">
+                            <div class="bg-white flex items-center text-sm mb-3 pl-2 pr-3 py-1 rounded-full font-semibold">
+                                <span class="w-6 h-6 items-center flex justify-center rounded-full bg-[#2DC3F5] mr-2">
+                                    <i class="bi bi-backpack text-white text-sm"></i>
+                                </span>
+                                Biologist
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="flex items-center space-x-2">
+                                <h6 class="text-md font-semibold truncate">
+                                    James Robert
+                                </h6>
+                                <img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg" alt="logo"
+                                 class="w-4 h-4">
+                            </div>
+                            <div class=" flex items-center mt-2">
+                                <div class="w-7 h-7 items-center flex justify-center mr-3 rounded-full bg-[#F8AC12]">
+                                    <i class="bi bi-telephone text-white text-sm"></i>
+                                </div>
+                                <span class="text-lg font-semibold items-center">$5+</span> 
+                                <span class="text-sm text-[#B5B3AE]">/min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 6 -->
+                <div data-aos="fade-left" data-aos-delay="1000" class="min-w-[270px] max-w-[270px] flex-shrink-0 bg-white
+                 rounded-3xl p-2 overflow-hidden shadow-md">
+                    <div> 
+                        <div class="bg-cover h-60 flex items-end justify-center rounded-3xl" 
+                        style="background-image: url('img/Rectangle 5892.png');">
+                            <div class="bg-white flex items-center text-sm mb-3 pl-2 pr-3 py-1 rounded-full font-semibold">
+                                <span class="w-6 h-6 items-center flex justify-center rounded-full bg-[#2DC3F5] mr-2">
+                                    <i class="bi bi-backpack text-white text-sm"></i>
+                                </span>
+                                Edu & Tech Consultant
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="flex items-center space-x-2">
+                                <h6 class="text-md font-semibold truncate">
+                                    George William
+                                </h6>
+                                <img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/GB.svg" alt="logo"
+                                 class="w-4 h-4">
+                            </div>
+                            <div class=" flex items-center mt-2">
+                                <div class="w-7 h-7 items-center flex justify-center mr-3 rounded-full bg-[#F8AC12]">
+                                    <i class="bi bi-telephone text-white text-sm"></i>
+                                </div>
+                                <span class="text-lg font-semibold items-center">$5+</span> 
+                                <span class="text-sm text-[#B5B3AE]">/min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 7 -->
+                <div data-aos="fade-left" data-aos-delay="1000" class="min-w-[270px] max-w-[270px] flex-shrink-0 bg-white
+                 rounded-3xl p-2 overflow-hidden shadow-md">
+                    <div> 
+                        <div class="bg-cover h-60 flex items-end justify-center rounded-3xl" 
+                        style="background-image: url('img/Rectangle 5893.png');">
+                            <div class="bg-white flex items-center text-sm mb-3 pl-2 pr-3 py-1 rounded-full font-semibold">
+                                <span class="w-6 h-6 items-center flex justify-center rounded-full bg-[#2DC3F5] mr-2">
+                                    <i class="bi bi-backpack text-white text-sm"></i>
+                                </span>
+                                Sex/Relationship Expert
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="flex items-center space-x-2">
+                                <h6 class="text-md font-semibold">
+                                    Megan Casler
+                                </h6>
+                                <img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg" alt="logo"
+                                 class="w-4 h-4">
+                            </div>
+                            <div class=" flex items-center mt-2">
+                                <div class="w-7 h-7 items-center flex justify-center mr-3 rounded-full bg-[#F8AC12]">
+                                    <i class="bi bi-telephone text-white text-sm"></i>
+                                </div>
+                                <span class="text-lg font-semibold items-center">$5+</span> 
+                                <span class="text-sm text-[#B5B3AE]">/min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 8 -->
+                <div data-aos="fade-left" data-aos-delay="1000" class="min-w-[270px] max-w-[270px] flex-shrink-0 bg-white
+                 rounded-3xl p-2 overflow-hidden shadow-md">
+                    <div> 
+                        <div class="bg-cover h-60 flex items-end justify-center rounded-3xl" 
+                        style="background-image: url('img/Rectangle 5894.png');">
+                            <div class="bg-white flex items-center text-sm mb-3 pl-2 pr-3 py-1 rounded-full font-semibold">
+                                <span class="w-6 h-6 items-center flex justify-center rounded-full bg-[#2DC3F5] mr-2">
+                                    <i class="bi bi-backpack text-white text-sm"></i>
+                                </span>
+                                Senior Petroleum Engineer
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="flex items-center space-x-2">
+                                <h6 class="text-md font-semibold">
+                                    Daniel Emuchay
+                                </h6>
+                                <img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/NG.svg" alt="logo"
+                                 class="w-4 h-4">
+                            </div>
+                            <div class=" flex items-center mt-2">
+                                <div class="w-7 h-7 items-center flex justify-center mr-3 rounded-full bg-[#F8AC12]">
+                                    <i class="bi bi-telephone text-white text-sm"></i>
+                                </div>
+                                <span class="text-lg font-semibold items-center">$3+</span> 
+                                <span class="text-sm text-[#B5B3AE]">/min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-nowrap py-16 lg:py-24 flex justify-center">
+            <a href="sign-in.html">
+                <button class="rounded-2xl  bg-[#F8AB11] font-semibold py-3 px-5 lg:px-6 text-white text-md transition-all 
+                duration-300 hover:scale-90 active:scale-90 hover:bg-[] slider-btn">
+                    Discover Experts
+                </button>
+            </a>
+        </div>
+    </section>
+
+    <!-- Engagement-section -->
+    <section class="">
+        <div class="px-5 md:px-10 lg:px-16 py-16 lg:py-24">
+            <div class="flex justify-between">
+                <div class="text-white text-4xl lg:text-5xl xl:text-7xl font-bold md:pl-6 lg:px-5">
+                    <div data-aos="fade-up" data-aos-delay="200" class="text-black">
+                        Engage
+                    </div> 
+                    <div data-aos="fade-up" data-aos-delay="400" class="lg:mt-2">
+                        <span class="text-[#EF3867]">industry big</span>
+                    </div> 
+                    <div class="lg:-mt-10 ml-[230px] lg:ml-[265px] xl:ml-[390px] " data-aos="zoom-in">
+                        <img src="img/star.svg fill.png" alt="star" class="w-10 lg:w-16">
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="600" class="text-black -mt-10 lg:-mt-5">
+                        <span class="text-[#EF3867]">names</span> and all
+                    </div> 
+                    <div class="text-black lg:pt-1" data-aos="fade-up" data-aos-delay="600">
+                        that stuff
+                    </div>
+                </div>
+                <div class="flex justify-end items-end lg:-mt-40 space-x-5">
+                    <button class="group border border-[#EF3867] rounded-full w-20 h-20 transition-transform hidden lg:block
+                    duration-300 hover:bg-[#EF3867] hover:scale-90">
+                        <i class="bi bi-arrow-left text-[#EF3867] group-hover:text-white transition-colors text-2xl"></i>
+                    </button>
+                    <button class="group border border-[#EF3867] rounded-full w-20 h-20 transition-transform duration-300
+                     hover:bg-[#EF3867] hover:scale-90 hidden lg:block">
+                        <i class="bi bi-arrow-right text-[#EF3867] group-hover:text-white transition-colors text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-section w-full overflow-hidden pl-5 md:pl-10 lg:pl-16">
+            <div  class="scroll-track flex flex-row gap-4 py-4 cursor-grab select-none">
+
+                <!-- CARD 1 -->
+                <div class="min-w-[290px] max-w-[300px] lg:min-w-[380px]   
+                lg:max-w-[420px] flex-shrink-0 bg-white rounded-3xl overflow-hidden shadow-md bg-cover flex 
+                items-end justify-center" style="background-image: url('img/Okugbere Akpovire.png');">
+                    <div class="items-end text-xl text-white mb-5 font-semibold">
+                        Okugbere Akpovire
+                        <div class="flex justify-center items-center mt-2">
+                            <div class="w-7 h-7 items-center flex justify-center mr-3 rounded-full bg-[#F8AC12]">
+                                <i class="bi bi-telephone text-white text-sm"></i>
+                            </div>
+                            <span class="text-lg font-semibold items-center">$25+</span> 
+                            <span class="text-sm text-[#B5B3AE]">/min</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div data-aos="fade-left" data-aos-delay="400" class="min-w-[290px] max-w-[300px] lg:min-w-[380px] 
+                lg:max-w-[420px] flex-shrink-0 bg-white rounded-3xl overflow-hidden shadow-md bg-cover flex items-end 
+                justify-center" style="background-image: url('img/Orbay Ünsoy.png');">
+                    <div class="items-end text-xl text-white mb-5 font-semibold">
+                        Orbay Ünsoy
+                        <div class="flex justify-center items-center mt-2">
+                            <div class="w-7 h-7 items-center flex justify-center mr-3 rounded-full bg-[#F8AC12]">
+                                <i class="bi bi-telephone text-white text-sm"></i>
+                            </div>
+                            <span class="text-lg font-semibold items-center">$35+</span> 
+                            <span class="text-sm text-[#B5B3AE]">/min</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div data-aos="fade-left" data-aos-delay="600" class="min-w-[290px] max-w-[300px] lg:min-w-[380px] 
+                lg:max-w-[420px] flex-shrink-0 bg-white rounded-3xl overflow-hidden shadow-md bg-cover flex items-end 
+                justify-center" style="background-image: url('img/Alicia.png');">
+                    <div class="items-end text-xl text-white mb-5 font-semibold">
+                        Alicia Gberikon
+                        <div class="flex justify-center items-center mt-2">
+                            <div class="w-7 h-7 items-center flex justify-center mr-3 rounded-full bg-[#F8AC12]">
+                                <i class="bi bi-telephone text-white text-sm"></i>
+                            </div>
+                            <span class="text-lg font-semibold items-center">$30+</span> 
+                            <span class="text-sm text-[#B5B3AE]">/min</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div data-aos="fade-left" data-aos-delay="800" class="min-w-[290px] max-w-[300px] lg:min-w-[380px] 
+                lg:max-w-[420px] flex-shrink-0 bg-white rounded-3xl overflow-hidden shadow-md bg-cover h-[290px] 
+                lg:h-[380px] flex items-end justify-center" style="background-image: url('img/Rectangle 5889.png');">
+                    <div class="items-end text-xl text-white mb-5 font-semibold">
+                        Shane Roach
+                        <div class="flex justify-center items-center mt-2">
+                            <div class="w-7 h-7 items-center flex justify-center mr-3 rounded-full bg-[#F8AC12]">
+                                <i class="bi bi-telephone text-white text-sm"></i>
+                            </div>
+                            <span class="text-lg font-semibold items-center">$40+</span> 
+                            <span class="text-sm text-[#B5B3AE]">/min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-nowrap py-16 lg:py-24 flex justify-center">
+            <a href="sign-in.html">
+                <button class="rounded-2xl  bg-[#020813] font-semibold py-3 px-5 lg:px-6 text-white text-md transition-all 
+                duration-300 hover:scale-90 active:scale-90 hover:bg-[] slider-btn">
+                    Discover Experts
+                </button>
+            </a>
+        </div>
+    </section>
+
+    <!-- Join-Live-Section -->
+    <section class="bg-[#F8AB11]">
+        <div class="px-5 md:px-10 lg:px-16 py-16 lg:pt-32">
+            <div class="flex justify-between">
+                <div class="text-white text-4xl lg:text-5xl xl:text-7xl font-bold md:pl-6 lg:px-9 relative">
+                    <div class="lg:-top-6 ml-20 lg:ml-28 xl:ml-48 absolute z-10" data-aos="zoom-in">
+                        <img src="img/live.svg.png" alt="live" class="w-20 xl:w-28">
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="200" class="">
+                        Join <span class="text-black">live</span>
+                    </div> 
+                    <div data-aos="fade-up" data-aos-delay="400" class="pt-2">
+                        <span class="text-black">broadcasts</span> with
+                    </div> 
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        your favourite
+                    </div> 
+                    <div class="-mt-7 lg:-mt-9 ml-28 lg:ml-40 xl:ml-56 absolute" data-aos="zoom-in">
+                        <img src="img/love.svg.png" alt="love" class="w-11 xl:w-20">
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="800" class="pt-2">
+                        people
+                    </div>
+                </div>
+                <div class="flex items-end space-x-5">
+                    <button class="border border-[ffffff] rounded-full w-20 h-20 transition-transform hidden lg:block
+                    duration-300 hover:bg-black hover:scale-90">
+                        <i class="bi bi-arrow-left text-white text-2xl"></i>
+                    </button>
+                    <button class="border border-[ffffff] rounded-full w-20 h-20 transition-transform duration-300
+                     hover:bg-black hover:scale-90 hidden lg:block">
+                        <i class="bi bi-arrow-right text-white text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-section w-full overflow-hidden pl-3 md:pl-10 lg:pl-16">
+            <div id="scrollRow" class=" scroll-track flex-row gap-4 overflow-x-auto overflow-y-hidden py-4 px-2 
+            cursor-grab select-none">
+
+                <!-- CARD 1 -->
+                <div class="min-w-[310px] max-w-[320px] flex-shrink-0 bg-white
+                 rounded-3xl pt-2 overflow-hidden shadow-md md:min-w-[400px] lg:min-w-[305px] xl:min-w-[500px] 
+                 xl:max-w-[600px]">
+                    <div class="px-2"> 
+                        <div class="bg-cover h-40 lg:h-44 xl:h-60 flex items-end justify-center rounded-3xl" 
+                        style="background-image: url('img/Matthew Davis and 2 Others.png');">
+                            <div class="bg-white flex items-center text-sm mb-3 pl-2 pr-3 py-1 rounded-full font-semibold">
+                                <span class="w-6 h-6 items-center flex justify-center rounded-full bg-[#2DC3F5] mr-2">
+                                    <img src="img/profile.svg.png" alt="Profile" class="w-7">
+                                </span>
+                                Matthew Davis and 2 Others
+                                <img src="img/ES.png" alt="ES" class="w-4 ml-1">
+                            </div>
+                        </div>
+                        <div class="px-2 pt-3 pb-6 lg:pb-4">
+                            <div class="flex items-center">
+                                <h6 class="text-md font-semibold">
+                                    Live Orchestra
+                                </h6>
+                            </div>
+                            <div class="flex items-center mt-2">
+                                <div class="mr-3">
+                                    <img src="img/money.svg.png" alt="money" class="w-7">
+                                </div>
+                                <span class="text-lg font-semibold items-center">$30+</span> 
+                                <span class="text-sm text-[#B5B3AE]">/person</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div data-aos="fade-left" data-aos-delay="400" class="min-w-[310px] max-w-[320px] md:min-w-[400px] 
+                lg:min-w-[305px] xl:min-w-[500px] xl:max-w-[600px] flex-shrink-0 bg-white rounded-3xl px-2 pt-2 
+                overflow-hidden shadow-md">
+                    <div> 
+                        <div class="bg-cover h-40 lg:h-44 xl:h-60 flex items-end justify-center rounded-3xl" 
+                        style="background-image: url('img/Jack Wilson +2 more.png');">
+                            <div class="bg-white flex items-center text-sm mb-3 pl-2 pr-12 py-1 rounded-full font-semibold">
+                                <span class="w-6 h-6 items-center flex justify-center rounded-full bg-[#2DC3F5] mr-2">
+                                    <img src="img/profile.svg.png" alt="Profile" class="w-7">
+                                </span>
+                                Jack Wilson +2 more
+                                <img src="img/CA.svg.png" alt="ES" class="w-4 ml-1">
+                            </div>
+                        </div>
+                        <div class="px-2 pt-3 pb-6 lg:pb-4">
+                            <div class="flex items-center">
+                                <h6 class="text-md font-semibold">
+                                    Building a Formidable Sales Team
+                                </h6>
+                            </div>
+                            <div class="flex items-center mt-2">
+                                <div class="mr-3">
+                                    <img src="img/money.svg.png" alt="money" class="w-7">
+                                </div>
+                                <span class="text-lg font-semibold items-center">$10+</span> 
+                                <span class="text-sm text-[#B5B3AE]">/person</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div data-aos="fade-left" data-aos-delay="600" class="min-w-[310px] max-w-[320px] md:min-w-[400px] 
+                lg:min-w-[305px] xl:min-w-[500px] xl:max-w-[600px] flex-shrink-0 bg-white rounded-3xl px-2 pt-2 
+                overflow-hidden shadow-md">
+                    <div> 
+                        <div class="bg-cover h-40 lg:52 xl:h-60 flex items-end justify-center rounded-3xl" 
+                        style="background-image: url('img/lauryn and tina.png');">
+                            <div class="bg-white flex items-center text-sm mb-3 pl-2 pr-12 py-1 rounded-full font-semibold">
+                                <span class="w-6 h-6 items-center flex justify-center rounded-full bg-[#2DC3F5] mr-2">
+                                    <img src="img/profile.svg.png" alt="Profile" class="w-7">
+                                </span>
+                                Lauryn and Tina
+                                <img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/GB.svg" alt="logo"
+                                class="w-4 h-4 ml-1">
+                            </div>
+                        </div>
+                        <div class="px-2 pt-3 pb-6 lg:pb-">
+                            <div class="flex items-center">
+                                <h6 class="text-md font-semibold">
+                                    Make Over with Lauryn and Tina
+                                </h6>
+                            </div>
+                            <div class="flex items-center mt-2">
+                                <div class="mr-3">
+                                    <img src="img/money.svg.png" alt="money" class="w-7">
+                                </div>
+                                <span class="text-lg font-semibold items-center">$10+</span> 
+                                <span class="text-sm text-[#B5B3AE]">/person</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div data-aos="fade-left" data-aos-delay="800" class="min-w-[310px] max-w-[320px] md:min-w-[400px] 
+                lg:min-w-[305px] xl:min-w-[500px] xl:max-w-[600px] flex-shrink-0 bg-white rounded-3xl px-2 pt-2 
+                overflow-hidden shadow-md">
+                    <div> 
+                        <div class="bg-cover h-40 lg:h-44 xl:h-60 flex items-end justify-center rounded-3xl" 
+                        style="background-image: url('img/rita benjamin.png');">
+                            <div class="bg-white flex items-center text-sm mb-3 pl-2 pr-12 py-1 rounded-full font-semibold">
+                                <span class="w-6 h-6 items-center flex justify-center rounded-full bg-[#2DC3F5] mr-2">
+                                    <img src="img/profile.svg.png" alt="Profile" class="w-7">
+                                </span>
+                                Rita Benjamen
+                                <img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg" alt="logo"
+                                 class="w-4 h-4 ml-1">
+                            </div>
+                        </div>
+                        <div class="px-2 pt-3 pb-4 lg:pb-4">
+                            <div class="flex items-center">
+                                <h6 class="text-md font-semibold">
+                                    Come on Live with Me
+                                </h6>
+                            </div>
+                            <div class="flex items-center mt-2">
+                                <div class="mr-3">
+                                    <img src="img/money.svg.png" alt="money" class="w-7">
+                                </div>
+                                <span class="text-lg font-semibold items-center">$10+</span> 
+                                <span class="text-sm text-[#B5B3AE]">/person</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-nowrap py-16 lg:py-24 flex justify-center">
+            <a href="sign-in.html">
+                <button class="rounded-2xl  bg-[#020813] font-semibold py-3 px-5 lg:px-6 text-white text-md transition-all 
+                duration-300 hover:scale-90 active:scale-90 hover:bg-[] slider-btn">
+                    Discover Broadcasts
+                </button>
+            </a>
+        </div>
+    </section>
+    
+    <!-- About-Pickt-Section -->
+    <section id="about">
+        <div class="text-center text-[#030303] mt-28 lg:mt-36 text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold">
+            <div data-aos="fade-up" data-aos-delay="200" class="hidden md:block lg:block">
+                Share the <span class="text-[#5E48DB]">voice</span> and grit
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200" class="block md:hidden lg:hidden">
+                Share the <span class="text-[#5E48DB]">voice</span> and
+            </div>
+            <div data-aos="zoom-in" class="flex justify-center -mt-20 md:-mt-20 lg:-mt-24 xl:-mt-36">
+                <img src="img/mic.svg.png" alt="mic" class="w-16 lg:w-20 xl:w-28">
+            </div>
+            <div class="pt-4 lg:pt-6 xl:pt-12 hidden md:block lg:block" data-aos="fade-up" data-aos-delay="400">
+                behind your greatest <span class="text-[#EF3867]">works</span>,
+            </div>
+            <div class="pt-3 block md:hidden lg:hidden" data-aos="fade-up" data-aos-delay="400">
+                grit behind your
+            </div>
+            <div class="flex justify-center lg:pl-[1080px] -mt-9 mr-72 block md:hidden lg:hidden" data-aos="zoom-in" >
+                <img src="img/passion.svg.png" alt="charge" class="w-8 lg:w-20">
+            </div>
+            <div class="-mt-2 block md:hidden lg:hidden" data-aos="fade-up" data-aos-delay="400">
+                greatest <span class="text-[#EF3867]">works</span>,
+            </div>
+            <div class="flex justify-center md:pl-[510px] lg:pl-[730px] xl:pl-[1050px] md:-mt-14 lg:-mt-20 xl:-mt-24 
+            hidden md:block lg:block" data-aos="zoom-in" >
+                <img src="img/passion.svg.png" alt="charge" class="w-10 lg:w-16 xl:w-20">
+            </div>
+            <div class="-mt-2 pt-2 lg:pt-4 xl:pt-6" data-aos="fade-up" data-aos-delay="600">
+                <span class="text-[#F8AC12]">knowledge</span> and <span class="text-[#F8AC12]">ideas.</span>
+            </div>
+            <div class="flex justify-center -mt-7 md:-mt-7 lg:-mt-7 ml-40 md:ml-28 lg:ml-28" data-aos="zoom-in">
+                <img src="img/idea.svg.png" alt="idea" class="w-16 lg:w-24 xl:w-28">
+            </div>
+        </div>
+        <div class="flex flex-col flex-col-reverse lg:grid md:grid-cols-2">
+            <div class="pl-36 md:pl-[430px] lg:pl-64 xl:pl-80 pt-20 md:pt-64 lg:pt-36 xl:pt-52 mt-10 lg:-mt-12 h-[400px] 
+            md:h-[860px] lg:h-[650px] xl:h-[750px] bg-cover" style="background-image: url('img/about.png.png');">
+                <img src="img/Group (4).png" alt="group" class="w-44 md:w-60 lg:w-48 xl:w-60">
+            </div>
+            <div class="md:ms-auto lg:me-[120px] xl:me-[290px] text-md text-[#293A40] font-semibold px-6 lg:px-0 pt-14 
+            lg:pt-5 xl:pt-0 md:pr-20 lg:pr-0">
+                <div data-aos="fade-up" data-aos-delay="200" class="hidden md:block">Pickt empowers creatives and professionals</div>
+                <div data-aos="fade-up" data-aos-delay="200" class="block md:hidden">Pickt empowers creatives and</div>
+                <div data-aos="fade-up" data-aos-delay="400" class="hidden md:block">with a variety of tools to produce and</div> 
+                <div data-aos="fade-up" data-aos-delay="400" class="block md:hidden">professionals with a variety of tools</div> 
+                <div data-aos="fade-up" data-aos-delay="600" class="hidden md:block">market products like ebooks, courses,</div>
+                <div data-aos="fade-up" data-aos-delay="600" class="block md:hidden">to produce and market products like</div>
+                <div data-aos="fade-up" data-aos-delay="800"class="hidden md:block">coaching programs in their digital portfolio</div>
+                <div data-aos="fade-up" data-aos-delay="800"class="block md:hidden">ebooks, courses, coaching programs</div>   
+                <div data-aos="fade-up" data-aos-delay="800"class="block md:hidden">in their digital portfolio</div>
+                <a href="sign-in.html">
+                    <button class="rounded-2xl  bg-[#5E48DB] font-semibold py-3 px-5 lg:px-6 text-white text-md 
+                    transition-all duration-300 hover:scale-90 active:scale-90 hover:bg-[#8a79e8] mt-7 slider-btn">
+                        Get Started
+                    </button>
+                </a>   
+            </div>
+        </div>
+        <div class="flex flex-col items-end justify-end text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mt-10 
+        lg:-mt-64 xl:-mt-36 pr-5 md:pr-14 lg:pr-16 xl:pr-28 text-[#293A40]">
+            <div data-aos="fade-up" data-aos-delay="200" class="hidden lg:block">
+                The perfect tools
+            </div>
+            <div class="pt-2 hidden lg:block" data-aos="fade-up" data-aos-delay="400">
+                to monetize your
+            </div>
+            <div class="pt-2 hidden lg:block" data-aos="fade-up" data-aos-delay="600">
+                time
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200" class="block lg:hidden">
+                The perfect tools to
+            </div>
+            <div class="block lg:hidden" data-aos="fade-up" data-aos-delay="400">
+                monetize your time
+            </div>
+        </div>
+
+        <div class="px-2 md:px-10 lg:px-16 xl:px-28">
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 px-3 gap-6 mt-20">
+                <div class="p-8 bg-[#FAFAFA] transition-all rounded-3xl duration-300 cursor-pointer">
+                    <div class="w-24" data-aos="zoom-in">
+                        <img src="img/link.svg.png" alt="link">
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <h1 class="text-[#020813] text-lg mt-3 font-bold">
+                            Get Personal URL
+                        </h1>
+                    </div>
+                    <div class="text-md pt-2 leading-6 text-[#293A40]">
+                        <div data-aos="fade-up" data-aos-delay="200">
+                            Get and share your personal profile
+                        </div> 
+                        <div data-aos="fade-up" data-aos-delay="300">
+                            URL to give people direct access to your page.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-[#FAFAFA] transition-all rounded-3xl duration-300 cursor-pointer">
+                    <div class="w-24" data-aos="zoom-in">
+                        <img src="img/Specify Rates.png" alt="Rates">
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <h1 class="text-[#020813] text-lg mt-3 font-bold">
+                            Specify Rates
+                        </h1>
+                    </div>
+                    <div class="text-md pt-2 leading-6 text-[#293A40]">
+                        <div data-aos="fade-up" data-aos-delay="200">
+                            Specify your rates for video calls,
+                        </div> 
+                        <div data-aos="fade-up" data-aos-delay="300">
+                            audio calls and chat sessions.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-[#FAFAFA] transition-all rounded-3xl duration-300 cursor-pointer">
+                    <div class="w-24" data-aos="zoom-in">
+                        <img src="img/availability.svg.png" alt="availability">
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <h1 class="text-[#020813] text-lg mt-3 font-bold">
+                            Manage Availability
+                        </h1>
+                    </div>
+                    <div class="text-md pt-2 leading-6 text-[#293A40]">
+                        <div data-aos="fade-up" data-aos-delay="200">
+                            Set your personal Pickt calendar to
+                        </div> 
+                        <div data-aos="fade-up" data-aos-delay="300" class="hidden lg:block">
+                            reflect your availability to take Video,
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="400" class="block lg:hidden">
+                            reflect your availability to take
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="300" class="block lg:hidden">
+                            Video, audio, or chat session
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="400" class="hidden lg:block">
+                            audio, or chat session meetings.
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="400" class="block lg:hidden">
+                            meetings.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-[#FAFAFA] transition-all duration-300 rounded-3xl cursor-pointer">
+                    <div class="w-24" data-aos="zoom-in">
+                        <img src="img/Fast Withdrawals.png" alt="withdrawal">
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <h1 class="text-[#020813] text-lg mt-3 font-bold">
+                            Fast Withdrawals
+                        </h1>
+                    </div>
+                    <div class="text-md pt-2 leading-6 text-[#293A40]">
+                        <div data-aos="fade-up" data-aos-delay="200">
+                            Withdraw earnings from your Pickt
+                        </div> 
+                        <div data-aos="fade-up" data-aos-delay="300">
+                            wallet to your personal bank account.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-[#FAFAFA] transition-all duration-300 rounded-3xl cursor-pointer">
+                    <div class="w-24" data-aos="zoom-in">
+                        <img src="img/Create Broadcasts.png" alt="Broadcast">
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <h1 class="text-[#020813] text-lg mt-3 font-bold">
+                            Create Broadcasts
+                        </h1>
+                    </div>
+                    <div class="text-md pt-2 leading-6 text-[#293A40]">
+                        <div data-aos="fade-up" data-aos-delay="200">
+                            Create live broadcast sessions and
+                        </div> 
+                        <div data-aos="fade-up" data-aos-delay="300">
+                            sell access to everyone.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="py-8 px-7 bg-[#FAFAFA] transition-all duration-300 rounded-3xl cursor-pointer">
+                    <div class="w-24" data-aos="zoom-in">
+                        <img src="img/Sell Your Products.png" alt="Sell">
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <h1 class="text-[#020813] text-lg mt-3 font-bold">
+                            Sell Your Products
+                        </h1>
+                    </div>
+                    <div class="text-md pt-2 leading-6 text-[#293A40]">
+                        <div data-aos="fade-up" data-aos-delay="200">
+                            Market and sell your ebooks, courses
+                        </div> 
+                        <div data-aos="fade-up" data-aos-delay="300">
+                            and digital products.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-center mt-7 lg:mt-12">
+            <a href="sign-in.html">
+                <button class="rounded-full  bg-[#5E48DB] font-semibold w-36 h-36 px-5 lg:px-6 text-white text-xl 
+                transition-all duration-300 hover:scale-90 active:scale-90 hover:bg-[#8a79e8] mt-7 slider-btn">
+                    <span class="">Get Started</span>
+                </button>
+            </a>
+        </div>
+    </section>
+    
+    <!-- FAQs-Section -->
+    <section id="faqs">
+        <div class="px-4 md:px-10 lg:px-16 mt-28 grid lg:grid-cols-2">
+            <div class="px-2 md:px-4 lg:px-8 pb-8">
+                <div class="sticky top-20 text-3xl lg:text-4xl xl:text-5xl text-[#2E2E2E] font-bold pt-7">
+                    <div data-aos="fade-up" data-aos-delay="100">Frequently Asked</div> 
+                    <div data-aos="fade-up" data-aos-delay="200">Questions</div>
+                </div>
+            </div>
+            <div id="faq-container">
+                <div class="faq-item rounded-2xl mt-3">
+                    <div class="faq-trigger w-full cursor-pointer bg-[#FAFAFA] flex rounded-2xl justify-between px-4 
+                    md:px-7 py-5">
+                        <span class="text-lg text-[#0A0A0A] font-medium">
+                            What is Pickt?
+                        </span>
+                        <i class="chevron bi bi-chevron-down text-xl transition-transform duration-300"></i>
+                    </div>
+                    <div class="answer-wrap">
+                        <div class="px-2 md:px-7 pb-7 text-[#6D6C75] bg-[#FAFAFA] leading-relaxed">
+                            Pickt is a social platform that allows people from all walks of life
+                            to connect, share information and get paid for their time.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item rounded-2xl mt-3">
+                    <div class="faq-trigger w-full cursor-pointer bg-[#FAFAFA] flex rounded-2xl justify-between px-4 
+                    md:px-7 py-5">
+                        <span class="text-lg text-[#0A0A0A] font-medium">
+                            What does Pickt mean?
+                        </span>
+                        <i class="chevron bi bi-chevron-down text-xl transition-transform duration-300"></i>
+                    </div>
+                    <div class="answer-wrap">
+                        <div class="px-2 md:px-7 pb-7 text-[#6D6C75] bg-[#FAFAFA] leading-relaxed">
+                            Pickt is an old-fashioned spelling for 'picked' which we use to refer to the act of 
+                            brain-picking. So, if you wish to pick someone's brain on a subject,
+                            we would typically refer to you as a Picker and if you wish to share your knowledge,
+                            we would call you a PRO.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item rounded-2xl mt-3">
+                    <div class="faq-trigger w-full cursor-pointer bg-[#FAFAFA] flex rounded-2xl justify-between px-4 
+                    md:px-7 py-5">
+                        <span class="text-lg text-[#0A0A0A] font-medium">
+                            Which kind of experts do i have access to?
+                        </span>
+                        <i class="chevron bi bi-chevron-down text-xl transition-transform duration-300"></i>
+                    </div>
+                    <div class="answer-wrap">
+                        <div class="px-2 md:px-7 pb-7 text-[#6D6C75] bg-[#FAFAFA] leading-relaxed">
+                            You can find experts from all walks of life from TikTok stars to Lawyers and
+                            everyone in between. Find anyone that suits the field or industry that you
+                            would like to know more about.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item rounded-2xl mt-3">
+                    <div class="faq-trigger w-full cursor-pointer bg-[#FAFAFA] flex rounded-2xl justify-between px-4 
+                    md:px-7 py-5">
+                        <span class="text-lg text-[#0A0A0A] font-medium">
+                            Can i be a Picker and a PRO at the same time?
+                        </span>
+                        <i class="chevron bi bi-chevron-down text-xl transition-transform duration-300"></i>
+                    </div>
+                    <div class="answer-wrap">
+                        <div class="px-2 md:px-7 pb-7 text-[#6D6C75] bg-[#FAFAFA] leading-relaxed">
+                            Technically, yes you can. When everyone signs up on Pickt, they have basic Picker 
+                            accounts until they decide to upgrade to a PRO account if they wish to share their
+                            expertise and get paid for doing so.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item rounded-2xl mt-3">
+                    <div class="faq-trigger w-full cursor-pointer bg-[#FAFAFA] flex rounded-2xl justify-between px-4 
+                    md:px-7 py-5">
+                        <span class="text-lg text-[#0A0A0A] font-medium">
+                            Can i withdraw unused money from my Pickt wallet?
+                        </span>
+                        <i class="chevron bi bi-chevron-down text-xl transition-transform duration-300"></i>
+                    </div>
+                    <div class="answer-wrap">
+                        <div class="px-2 md:px-7 pb-7 text-[#6D6C75] bg-[#FAFAFA] leading-relaxed">
+                            Of course, you can. We understand that you might have an unexpected need for some
+                            money. So, if it's in your wallet and isn't locked down in escrow as payment for a service,
+                            then, you're free to withdraw it. It's yours anyway.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item rounded-2xl mt-3">
+                    <div class="faq-trigger w-full cursor-pointer bg-[#FAFAFA] flex rounded-2xl justify-between px-4 
+                    md:px-7 py-5">
+                        <span class="text-lg text-[#0A0A0A] font-medium">
+                            Can i reach out to an Experts in another Location?
+                        </span>
+                        <i class="chevron bi bi-chevron-down text-xl transition-transform duration-300"></i>
+                    </div>
+                    <div class="answer-wrap">
+                        <div class="px-2 md:px-7 pb-7 text-[#6D6C75] bg-[#FAFAFA] leading-relaxed">
+                            Oh yes! Pickt is boundless and borderless, so you can search for people in a
+                            different country as you. If they have a Pickt account, they are reachable 
+                            by anyone from anywhere.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item rounded-2xl mt-3">
+                    <div class="faq-trigger w-full cursor-pointer bg-[#FAFAFA] flex rounded-2xl justify-between px-4 
+                    md:px-7 py-5">
+                        <span class="text-lg text-[#0A0A0A] font-medium">
+                            Why should i pay to ask someone a question?
+                        </span>
+                        <i class="chevron bi bi-chevron-down text-xl transition-transform duration-300"></i>
+                    </div>
+                    <div class="answer-wrap">
+                        <div class="px-2 md:px-7 pb-7 text-[#6D6C75] bg-[#FAFAFA] leading-relaxed">
+                            Paying someone to learn something from them shows that you are aware that their time
+                            is valuable, thus, spending time to answer your questions or teach you something needs
+                            to be rewarded. It's only right that you show your appreciation for their time and knowledge.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item rounded-2xl mt-3">
+                    <div class="faq-trigger w-full cursor-pointer bg-[#FAFAFA] flex rounded-2xl justify-between px-4 
+                    md:px-7 py-5">
+                        <span class="text-lg text-[#0A0A0A] font-medium">
+                            Do i get a refund if the expert doesn't show up for the meeting?
+                        </span>
+                        <i class="chevron bi bi-chevron-down text-xl transition-transform duration-300"></i>
+                    </div>
+                    <div class="answer-wrap">
+                        <div class="px-2 md:px-7 pb-7 text-[#6D6C75] text-md bg-[#FAFAFA] leading-relaxed">
+                            If the PRO doesn't show up for a meeting 100% refund. If the PRO shows up and the picker
+                            doesn't, the Picker will only be refunded 45% of their amount.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-aos="fade-up">
+            <h1 class="text-[26px] lg:text-4xl xl:text-5xl text-[#2E2E2E] mt-20 lg:mt-32 xl:mt-20 font-bold text-center">
+                    Didn’t find an answer?
+            </h1>
+        </div>
+        <div data-aos="fade-up">
+            <h2 class="text-[26px] lg:text-4xl xl:text-5xl text-[#F8AB11] lg:mt-2 mb-6 xl:mb-12 font-bold text-center">
+                Get in touch with us
+            </h2>
+        </div>
+        <div class="flex justify-center mb-20 lg:mb-32 xl:mb-20">
+            <a href="contact.html">
+                <button class="rounded-2xl  bg-[#5E48DB] font-semibold py-3 px-7 xl:py-5 xl:px-10 lg:px-10 text-white 
+                text-lg transition-all duration-300 hover:scale-90 active:scale-90 hover:bg-[#8a79e8] slider-btn">
+                    Contact Us
+                </button>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="relative bg-[#6c5ce7]">
+        <div class="flex flex-col items-center justify-center overflow-hidden px-6 pt-16 pb-5 lg:pb-12">
+            <div class="absolute bottom-0 left-0 w-full h-full pointer-events-none">
+                <svg viewBox="0 0 1440 420" preserveAspectRatio="none" class="absolute bottom-0 left-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="200" cy="380" rx="420" ry="180" fill="#fff" opacity="0.15"/>
+                <ellipse cx="1300" cy="320" rx="380" ry="160" fill="#fff" opacity="0.12"/>
+                </svg>
+            </div>
+            <h2 class="relative z-10 text-white text-center text-xl md:text-3xl font-semibold md:max-w-2xl leading-snug 
+            mb-8">
+                Would you like to get updates on Pickt delivered straight to your email? Subscribe now.
+            </h2>
+            <div class="relative z-10 flex items-center w-full max-w-sm border border-white/30 rounded-2xl 
+            overflow-hidden mb-12 backdrop-blur-sm">
+                <input type="email" name="email" placeholder="Email" class="flex-1 bg-transparent text-white 
+                placeholder-white/60 pl-5 pr-3 py-3 text-lg outline-none" required>
+                <button class="m-2 bg-[#FFFFFF80] hover:bg-white/30 transition-colors rounded-xl px-2 py-1 flex 
+                items-center justify-center">
+                    <i class="bi bi-arrow-right text-white text-3xl"></i>
+                </button>
+            </div>
+            <nav class="relative z-10 flex gap-7 md:gap-10 mt-8 md:mt-12 mb-8">
+                <a href="#about" class="relative group text-white hover:text-white text-lg transition-colors">
+                    About Pickt
+                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-white transition-all duration-300 
+                    group-hover:w-full"></span>
+                </a>
+                <a href="#faqs" class="relative group text-white hover:text-white text-lg transition-colors">
+                    FAQs
+                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-white transition-all duration-300 
+                    group-hover:w-full"></span>
+                </a>
+                <a href="contact.html" class="relative group text-white hover:text-white text-lg transition-colors">
+                    Contact us
+                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-white transition-all duration-300 
+                    group-hover:w-full"></span>
+                </a>
+            </nav>
+            <div class="relative z-10 flex gap-4 mt-4 md:mt-6 mb-10">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/company/pickt/" class="w-9 h-9 rounded-lg border border-white/30 flex 
+                items-center justify-center hover:bg-white/20 transition-colors">
+                    <svg class="xl:w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 
+                        6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" 
+                        r="2"/>
+                    </svg>
+                </a>
+                <!-- Twitter/X -->
+                <a href="https://x.com/pickthq?s=21" class="w-9 h-9 rounded-lg border border-white/30 flex items-center 
+                justify-center hover:bg-white/20 transition-colors">
+                    <i class="bi bi-twitter text-white xl:text-xl"></i>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/pickthq?igsh=aW8ycm50a3dyeDl0" class="w-9 h-9 rounded-lg border 
+                border-white/30 flex items-center justify-center hover:bg-white/20 transition-colors">
+                    <i class="bi bi-instagram text-white xl:text-xl"></i>                
+                </a>
+                <!-- YouTube -->
+                <a href="http://www.youtube.com/@pickthq" class="w-9 h-9 rounded-lg border border-white/30 flex 
+                items-center justify-center hover:bg-white/20 transition-colors">
+                    <i class="bi bi-youtube text-white xl:text-xl"></i>
+                </a>
+            </div>
+            <div class="relative z-10 text-white font-black text-7xl md:text-8xl tracking-wide">
+                Pickt.
+            </div>
+            <div class="text-white/60 text-sm">
+                <i class="bi bi-c-circle"></i>
+                2023 Pickt, Inc.
+            </div>
+        </div>
+
+        <div class="flex space-x-5 px-5 md:px-10 lg:px-24 pb-24 lg:pb-14 text-sm xl:text-md text-white/60 justify-center 
+        lg:justify-start">
+            <a href="" class="relative group">
+                Terms of Services
+                <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-white/60 transition-all duration-300 
+                group-hover:w-full"></span>
+            </a>
+            <a href="" class="relative group">
+                Privacy Policy
+                <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-white/60 transition-all duration-300 
+                group-hover:w-full"></span>
+            </a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Page-Loader -->
+    <script>
+        (function() {
+        const loader      = document.getElementById('page-loader');
+        const counterWrap = document.getElementById('counter-wrap');
+        const counter     = document.getElementById('loader-count');
+        const panel1      = document.getElementById('panel-1');
+        const panel2      = document.getElementById('panel-2');
+        const panel3      = document.getElementById('panel-3');
+        const panel4      = document.getElementById('panel-4');
+        const textMeet    = document.getElementById('text-meet');
+        const textTalk    = document.getElementById('text-talk');
+        const textKnow    = document.getElementById('text-know');
+        const textThrive  = document.getElementById('text-thrive');
+
+        const steps = [
+            { value: 47,  delay: 120 },
+            { value: 83,  delay: 150 },
+            { value: 100, delay: 120 },
+        ];
+        let i = 0;
+        function nextStep() {
+            if (i >= steps.length) {
+            counterWrap.style.transition = 'opacity 0.2s ease';
+            counterWrap.style.opacity = '0';
+            setTimeout(startPanels, 250);
+            return;
+            }
+            counter.innerHTML = steps[i].value + '<span style="font-size:0.9rem;">%</span>';
+            setTimeout(nextStep, steps[i].delay);
+            i++;
+        }
+        setTimeout(nextStep, 50);
+
+        function startPanels() {
+            counterWrap.style.display = 'none';
+
+            setTimeout(function() {
+            panel1.style.transition = 'width 0.5s ease-out';
+            panel1.style.width = '100%';
+            panel1.style.right = '0%';
+            textMeet.style.opacity = '1';
+
+            setTimeout(function() {
+                panel1.style.transition = 'width 0.5s ease-out, right 0.5s ease-out';
+                panel1.style.width = '25%';
+                panel1.style.right = '75%';
+
+                panel2.style.transition = 'width 0.5s ease-out';
+                panel2.style.width = '75%';
+                panel2.style.right = '0%';
+                textTalk.style.opacity = '1';
+
+                setTimeout(function() {
+                panel2.style.transition = 'width 0.5s ease-out, right 0.5s ease-out';
+                panel2.style.width = '25%';
+                panel2.style.right = '50%';
+
+                panel3.style.transition = 'width 0.5s ease-out';
+                panel3.style.width = '50%';
+                panel3.style.right = '0%';
+                textKnow.style.opacity = '1';
+
+                setTimeout(function() {
+                    panel3.style.transition = 'width 0.5s ease-out, right 0.5s ease-out';
+                    panel3.style.width = '25%';
+                    panel3.style.right = '25%';
+
+                    panel4.style.transition = 'width 0.5s ease-out';
+                    panel4.style.width = '25%';
+                    panel4.style.right = '0%';
+                    textThrive.style.opacity = '1';
+
+                    setTimeout(function() {
+                    textMeet.style.transition   = 'opacity 0.2s ease, transform 0.4s ease';
+                    textTalk.style.transition   = 'opacity 0.2s ease, transform 0.4s ease';
+                    textKnow.style.transition   = 'opacity 0.2s ease, transform 0.4s ease';
+                    textThrive.style.transition = 'opacity 0.2s ease, transform 0.4s ease';
+
+                    setTimeout(function() {
+                        textMeet.style.opacity   = '0';
+                        textMeet.style.transform = 'translateY(-20px)';
+                    }, 0);
+                    setTimeout(function() {
+                        textTalk.style.opacity   = '0';
+                        textTalk.style.transform = 'translateY(-20px)';
+                    }, 150);
+                    setTimeout(function() {
+                        textKnow.style.opacity   = '0';
+                        textKnow.style.transform = 'translateY(-20px)';
+                    }, 300);
+                    setTimeout(function() {
+                        textThrive.style.opacity   = '0';
+                        textThrive.style.transform = 'translateY(-20px)';
+                    }, 450);
+
+                    setTimeout(function() {
+                        loader.style.transition = 'opacity 0.5s ease';
+                        loader.style.opacity = '0';
+
+                        setTimeout(function() {
+                        loader.style.display = 'none';
+
+                        // Manually fade up each hero element with its own delay
+                        const heroSection = document.getElementById('top');
+                        const heroEls = heroSection.querySelectorAll('[data-aos]');
+
+                        heroEls.forEach(function(el) {
+                            const delay = parseInt(el.getAttribute('data-aos-delay')) || 0;
+
+                            el.style.opacity = '0';
+                            el.style.transform = 'translateY(30px)';
+                            el.style.transition = 'none';
+
+                            setTimeout(function() {
+                            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                            el.style.opacity = '1';
+                            el.style.transform = 'translateY(0)';
+                            }, delay);
+                        });
+
+                        // Init AOS for all other sections
+                        AOS.init({
+                            duration: 1000,
+                            once: true,
+                            disableMutationObserver: false,
+                        });
+
+                        }, 500);
+                    }, 800);
+
+                    }, 800);
+
+                }, 550);
+                }, 550);
+            }, 550);
+            }, 100);
+        }
+        })();
+    </script>
+
+    <!-- Search bar words animation -->
+    <script>
+        const words = ['technologists', 'Spiritual leaders', 'athletes', 'politicians', 'artists', 'entertainers', 
+        'educators', 'writers', 'entrepreneurs', 'scientists'];
+        let index = 0;
+        let cycleInterval = null;
+        let typeInterval = null;
+        let eraseInterval = null;
+
+        const el = document.getElementById('dynamic-word');
+        const placeholder = document.getElementById('placeholder-text');
+        const input = document.getElementById('searchInput');
+
+        // Hide placeholder when user types
+        input.addEventListener('input', () => {
+            placeholder.style.display = input.value ? 'none' : 'flex';
+        });
+
+        function typeWord(word) {
+            el.textContent = '';
+            let i = 0;
+            clearInterval(typeInterval);
+            typeInterval = setInterval(() => {
+            el.textContent += word[i++];
+            if (i >= word.length) clearInterval(typeInterval);
+            }, 60);
+        }
+
+        function eraseWord(cb) {
+            clearInterval(eraseInterval);
+            eraseInterval = setInterval(() => {
+            el.textContent = el.textContent.slice(0, -1);
+            if (!el.textContent.length) {
+                clearInterval(eraseInterval);
+                cb();
+            }
+            }, 40);
+        }
+
+        function cycle() {
+            eraseWord(() => {
+            index = (index + 1) % words.length;
+            setTimeout(() => typeWord(words[index]), 200);
+            });
+        }
+
+        // Clear any existing interval before starting a new one
+        clearInterval(cycleInterval);
+        cycleInterval = setInterval(cycle, 2500);
+    </script>
+
+    <!-- Menu Button -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburger       = document.getElementById('hamburger-btn');
+            const mobileMenu      = document.getElementById('mobile-menu');
+            const closeBtn        = document.getElementById('close-menu');
+            const menuSearchWrap  = document.getElementById('menu-search-wrap');
+            const menuSearchInput = menuSearchWrap ? document.querySelector('#menu-search-wrap input') : null;
+
+            if (!hamburger || !mobileMenu) return;
+
+            const menuItems = mobileMenu.querySelectorAll('.menu-item');
+
+            // Navbar mobile search
+            const mobileSearchIcon  = document.getElementById('mobileSearchIcon');
+            const mobileSearchInput = document.getElementById('mobileSearchInput');
+
+            if (mobileSearchIcon && mobileSearchInput) {
+                mobileSearchIcon.addEventListener('click', function() {
+                    if (mobileSearchInput.style.width === '0px' || mobileSearchInput.style.width === '0' || mobileSearchInput.style.width === '') {
+                        mobileSearchInput.style.width   = '130px';
+                        mobileSearchInput.style.opacity = '1';
+                        mobileSearchInput.focus();
+                    } else {
+                        mobileSearchInput.style.width   = '0';
+                        mobileSearchInput.style.opacity = '0';
+                        mobileSearchInput.blur();
+                    }
+                });
+
+                mobileSearchInput.addEventListener('blur', function() {
+                    if (this.value === '') {
+                        this.style.width   = '0';
+                        this.style.opacity = '0';
+                    }
+                });
+            }
+
+            // Menu overlay search
+            const menuSearchIcon      = document.getElementById('menuSearchIcon');
+            const menuSearchIconInput = document.getElementById('menuSearchInput');
+
+            if (menuSearchIcon && menuSearchIconInput) {
+                menuSearchIcon.addEventListener('click', function() {
+                    if (menuSearchIconInput.style.width === '0px' || menuSearchIconInput.style.width === '0' || menuSearchIconInput.style.width === '') {
+                        menuSearchIconInput.style.width   = '130px';
+                        menuSearchIconInput.style.opacity = '1';
+                        menuSearchIconInput.focus();
+                    } else {
+                        menuSearchIconInput.style.width   = '0';
+                        menuSearchIconInput.style.opacity = '0';
+                        menuSearchIconInput.blur();
+                    }
+                });
+
+                menuSearchIconInput.addEventListener('blur', function() {
+                    if (this.value === '') {
+                        this.style.width   = '0';
+                        this.style.opacity = '0';
+                    }
+                });
+            }
+
+            function closeMenu() {
+                hamburger.classList.remove('active');
+
+                if (menuSearchInput) {
+                    menuSearchInput.value = '';
+                    menuSearchInput.blur();
+                }
+
+                if (window.innerWidth < 768 && menuSearchWrap) {
+                    menuSearchWrap.style.display = 'none';
+                }
+
+                menuItems.forEach(el => el.classList.remove('animate'));
+
+                mobileMenu.style.opacity       = '0';
+                mobileMenu.style.pointerEvents = 'none';
+
+                setTimeout(() => {
+                    mobileMenu.style.display     = 'none';
+                    document.body.style.overflow = '';
+                }, 300);
+            }
+
+            // OPEN
+            hamburger.addEventListener('click', function () {
+                hamburger.classList.add('active');
+
+                if (window.innerWidth < 768 && menuSearchWrap) {
+                    menuSearchWrap.style.display = 'flex';
+                }
+
+                menuItems.forEach(el => el.classList.remove('animate'));
+
+                mobileMenu.style.opacity       = '0';
+                mobileMenu.style.pointerEvents = 'none';
+                mobileMenu.style.display       = 'flex';
+                document.body.style.overflow   = 'hidden';
+
+                setTimeout(() => {
+                    mobileMenu.style.opacity       = '1';
+                    mobileMenu.style.pointerEvents = 'all';
+                }, 10);
+
+                menuItems.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('animate');
+                    }, 300 + (index * 200));
+                });
+            });
+
+            // CLOSE button
+            closeBtn.addEventListener('click', function () {
+                document.body.style.overflow = '';
+                closeMenu();
+            });
+
+            // CLOSE on nav link click
+            window.handleNavClick = function(id) {
+                document.body.style.overflow = '';
+                closeMenu();
+                setTimeout(() => {
+                    const target = document.getElementById(id);
+                    if (target) target.scrollIntoView({ behavior: 'smooth' });
+                }, 320);
+            };
+        });
+    </script>
+
+    <!-- HandleNavClick -->
+    <script>
+        function handleNavClick(id) {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.add('opacity-0', 'pointer-events-none');
+        menu.classList.remove('opacity-100', 'pointer-events-auto');
+
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+    <!-- Card Slides -->
+    <script>
+        window.addEventListener('load', () => {
+
+            // Target all three scroll containers directly by their actual classes/ids
+            const scrollContainers = [
+                ...document.querySelectorAll('#scrollRow'),
+                ...document.querySelectorAll('.scroll-track')
+            ];
+
+            // Deduplicate in case any element matches both
+            const unique = [...new Set(scrollContainers)];
+
+            unique.forEach(container => {
+
+                const origCards = Array.from(container.children);
+                if (!origCards.length) return;
+
+                // Measure card width first before any changes
+                const firstCard = origCards[0];
+                const cardW     = firstCard.offsetWidth + 16;
+
+                // Responsive pad
+                const pad = window.innerWidth < 768 ? 20 : window.innerWidth < 1024 ? 40 : 64;
+
+                // Clone cards for infinite loop
+                for (let i = 0; i < 4; i++) {
+                    origCards.forEach(card => container.appendChild(card.cloneNode(true)));
+                }
+
+                // Inject spacer divs at start and end
+                function makeSpacer() {
+                    const sp          = document.createElement('div');
+                    sp.style.minWidth = pad + 'px';
+                    sp.style.height   = '1px';
+                    sp.style.flexShrink = '0';
+                    sp.dataset.spacer = 'true';
+                    return sp;
+                }
+                container.insertBefore(makeSpacer(), container.firstChild);
+                container.appendChild(makeSpacer());
+
+                // Force layout styles on container
+                container.style.display    = 'flex';
+                container.style.flexDirection = 'row';
+                container.style.gap        = '16px';
+                container.style.overflowX  = 'auto';
+                container.style.overflowY  = 'hidden';
+                container.style.width      = '100%';
+                container.style.padding    = '0';
+                container.style.cursor     = 'grab';
+                container.style.userSelect = 'none';
+                container.style.msOverflowStyle  = 'none';
+                container.style.scrollbarWidth   = 'none';
+                container.style.webkitOverflowScrolling = 'touch';
+                container.style.scrollSnapType  = 'x mandatory';
+
+                // Hide scrollbar webkit
+                const styleTag = document.createElement('style');
+                styleTag.textContent = `#scrollRow::-webkit-scrollbar, .scroll-track::-webkit-scrollbar { display: none; }`;
+                document.head.appendChild(styleTag);
+
+                const oneSetWidth = cardW * origCards.length;
+
+                // Start in middle set so both directions have buffer
+                container.scrollLeft = oneSetWidth + pad + 16;
+
+                // Infinite loop teleport
+                let isTeleporting = false;
+
+                container.addEventListener('scroll', () => {
+                    if (isTeleporting) return;
+                    const sl  = container.scrollLeft;
+                    const max = container.scrollWidth - container.offsetWidth;
+
+                    if (sl < oneSetWidth * 0.5) {
+                        isTeleporting        = true;
+                        container.scrollLeft = sl + oneSetWidth;
+                        isTeleporting        = false;
+                    }
+                    if (sl > max - oneSetWidth * 0.5) {
+                        isTeleporting        = true;
+                        container.scrollLeft = sl - oneSetWidth;
+                        isTeleporting        = false;
+                    }
+                });
+
+                // Find arrow buttons in closest parent section
+                const parentSection = container.closest('section');
+                const allBtns       = parentSection ? [...parentSection.querySelectorAll('button')] : [];
+                const prevBtn       = allBtns.find(b => b.querySelector('.bi-arrow-left'));
+                const nextBtn       = allBtns.find(b => b.querySelector('.bi-arrow-right'));
+
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', () => {
+                        container.scrollBy({ left: -cardW, behavior: 'smooth' });
+                    });
+                }
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', () => {
+                        container.scrollBy({ left: cardW, behavior: 'smooth' });
+                    });
+                }
+
+                // Mouse drag
+                let isDown  = false;
+                let startX  = 0;
+                let startSL = 0;
+
+                container.addEventListener('mousedown', e => {
+                    isDown   = true;
+                    startX   = e.clientX;
+                    startSL  = container.scrollLeft;
+                    container.style.scrollSnapType = 'none';
+                    container.style.cursor         = 'grabbing';
+                });
+
+                window.addEventListener('mousemove', e => {
+                    if (!isDown) return;
+                    container.scrollLeft = startSL - (e.clientX - startX);
+                });
+
+                window.addEventListener('mouseup', () => {
+                    if (!isDown) return;
+                    isDown               = false;
+                    container.style.cursor = 'grab';
+                    const nearest        = Math.round((container.scrollLeft - pad - 16) / cardW) * cardW + pad + 16;
+                    container.style.scrollSnapType = 'x mandatory';
+                    container.scrollTo({ left: nearest, behavior: 'smooth' });
+                });
+
+                // Touch drag
+                container.addEventListener('touchstart', e => {
+                    startX  = e.touches[0].clientX;
+                    startSL = container.scrollLeft;
+                    container.style.scrollSnapType = 'none';
+                }, { passive: true });
+
+                container.addEventListener('touchmove', e => {
+                    container.scrollLeft = startSL - (e.touches[0].clientX - startX);
+                }, { passive: true });
+
+                container.addEventListener('touchend', () => {
+                    const nearest = Math.round((container.scrollLeft - pad - 16) / cardW) * cardW + pad + 16;
+                    container.style.scrollSnapType = 'x mandatory';
+                    container.scrollTo({ left: nearest, behavior: 'smooth' });
+                });
+
+                // Resize
+                window.addEventListener('resize', () => {
+                    const newPad = window.innerWidth < 768 ? 20 : window.innerWidth < 1024 ? 40 : 64;
+                    container.querySelectorAll('[data-spacer]').forEach(sp => {
+                        sp.style.minWidth = newPad + 'px';
+                    });
+                });
+            });
+        });
+    </script>
+
+    <!-- FAQs -->
+    <script>
+        setTimeout(function() {
+            var triggers = document.getElementsByClassName('faq-trigger');
+            console.log('Found triggers:', triggers.length);
+            
+            for (var i = 0; i < triggers.length; i++) {
+                triggers[i].addEventListener('click', function() {
+                    var wrap = this.nextElementSibling;
+                    var chevron = this.querySelector('.chevron');
+                    var isOpen = wrap.classList.contains('open');
+
+                    var allWraps = document.getElementsByClassName('answer-wrap');
+                    var allChevrons = document.getElementsByClassName('chevron');
+
+                    for (var j = 0; j < allWraps.length; j++) {
+                        allWraps[j].classList.remove('open');
+                        allChevrons[j].style.transform = 'rotate(0deg)';
+                        allChevrons[j].style.color = '';
+                    }
+
+                    if (!isOpen) {
+                        wrap.classList.add('open');
+                        chevron.style.transform = 'rotate(180deg)';
+                        chevron.style.color = 'black';
+                    }
+                });
+            }
+        }, 500);
+    </script>
+
+    <!-- button touch effect -->
+    <script>
+        document.querySelectorAll('.slider-btn').forEach(btn => {
+        btn.addEventListener('touchstart', () => {
+            btn.style.transform = 'scale(0.92)';
+            btn.style.transition = 'transform 0.1s ease';
+        }, { passive: true });
+
+        btn.addEventListener('touchend', () => {
+            btn.style.transform = 'scale(1)';
+        }, { passive: true });
+
+        btn.addEventListener('touchcancel', () => {
+            btn.style.transform = 'scale(1)';
+        }, { passive: true });
+        });
+    </script>
+
+   <script>
+    window.addEventListener('scroll', () => {
+        const btn = document.getElementById('scroll-btn');
+        if (!btn) return;
+        if (window.scrollY > 300) {
+            btn.classList.add('opacity-0', 'pointer-events-none');
+        } else {
+            btn.classList.remove('opacity-0', 'pointer-events-none');
+        }
+    });
+</script>
+
+</body>
+</html>

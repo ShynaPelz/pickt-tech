@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pickt | Contact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="img/Clip path group.png">  
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="bootstrap-icons-1.11.3/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="flex fixed z-40 w-full bg-white border-b md:border-none items-stretch">
+
+        <!-- Logo + desktop search -->
+        <div class="flex items-center py-5 pl-5 md:pl-10 lg:px-16 shrink-0">
+            <a href="index.html">
+                <img src="img/logotext.svg.png" alt="Logo" class="w-20 md:w-24 lg:w-32 xl:w-28">
+            </a>
+            <div class="hidden lg:flex xl:flex items-center px-4">
+                <div class="relative flex items-center lg:w-56 xl:w-80 border border-transparent focus-within:border-[#5E48DB] 
+                rounded-xl px-3 lg:py-1.5 xl:py-2 gap-2 transition-all duration-300">
+                    <i class="bi bi-search text-[#5E48DB] text-lg"></i>
+                    <input type="text" id="searchInput" class="outline-none bg-transparent text-md flex-1">
+                    <span id="placeholder-text" class="absolute pointer-events-none text-gray-400 lg:text-sm xl:text-lg pl-7">
+                        search for <span id="dynamic-word" class="text-[#5E48DB]">technologists</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop nav links -->
+        <div class="hidden lg:flex lg:space-x-5 xl:space-x-7 items-center py-5 pr-10 lg:pr-16 font-medium ml-auto shrink-0">
+            <div class="relative group">
+                <a href="index.html#about" class="text-nowrap lg:text-md xl:text-lg">
+                    About Pickt
+                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 
+                    group-hover:w-full"></span>
+                </a>
+            </div>
+            <div class="relative group">
+                <a href="index.html#faqs" class="text-nowrap text-lg">
+                    FAQs
+                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 
+                    group-hover:w-full"></span>
+                </a>
+            </div>
+            <div class="relative group">
+                <a href="#top" class="text-nowrap text-lg">
+                    Contact us
+                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 
+                    group-hover:w-full"></span>
+                </a>
+            </div>
+            <div class="text-3xl font-light text-[#B5B3AE]">
+                |
+            </div>
+            <div class="relative group">
+                <a href="sign-in.html" class="text-nowrap text-lg text-[#5E48DB]">
+                    Log in
+                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-[#5E48DB] transition-all duration-300 
+                    group-hover:w-full"></span>
+                </a>
+            </div>
+            <div>
+                <a href="sign-up.html">
+                    <button class="rounded-2xl bg-[#5E48DB] py-3 px-7 lg:px-8 text-white text-lg text-nowrap
+                    transition-all duration-300 hover:scale-90 active:scale-90 hover:bg-[#8a79e8]">
+                        Sign up
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile/Tablet right side controls -->
+        <div class="flex lg:hidden items-stretch flex-1">
+
+            <!-- Search bar — iPad mini only -->
+            <div class="hidden md:flex flex-1 items-center px-4">
+                <div class="flex flex-1 items-center border border-transparent focus-within:border-[#5E48DB] rounded-lg 
+                px-3 py-1.5 gap-2 transition-all duration-300">
+                    <input type="text" placeholder="Search..." class="outline-none bg-transparent text-md flex-1 w-full">
+                    <i class="bi bi-search text-[#5E48DB] text-lg"></i>
+                </div>
+            </div>
+
+            <!-- Search — mobile only -->
+            <div class="flex md:hidden items-center px-3 border-r border-gray-200">
+                <div class="flex items-center border border-transparent focus-within:border-[#5E48DB] rounded-lg px-3 gap-2 
+                transition-all duration-300">
+                    <input type="text" class="outline-none bg-transparent text-md w-28 focus:w-28 transition-all 
+                    duration-300">
+                    <i class="bi bi-search text-[#5E48DB] text-lg"></i>
+                </div>
+            </div>
+
+            <!-- Hamburger -->
+            <button id="hamburger-btn" class="bg-[#5E48DB] px-5 flex flex-col justify-center gap-1.5 self-stretch shrink-0">
+                <span class="block w-8 h-0.5 bg-white/60"></span>
+                <span class="block w-8 h-0.5 bg-white/60"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 z-50 bg-[#5E48DB] flex-col flex opacity-0 pointer-events-none 
+        overflow-hidden">
+
+            <!-- Top bar -->
+            <div class="flex items-stretch border-b border-white/20 md:border-none">
+                <div class="flex items-center pl-5 md:pl-10 py-5 shrink-0">
+                    <a onclick="handleNavClick('top')">
+                        <img src="img/logotext.svg.png" alt="Logo" class="w-20 md:w-28 brightness-0 invert">
+                    </a>
+                </div>
+                <div class="flex items-stretch flex-1">
+
+                    <!-- Search bar — iPad mini only -->
+                    <div class="hidden md:flex flex-1 items-center px-4">
+                        <div class="flex flex-1 items-center border border-white/60 focus-within:border-white rounded-lg 
+                        px-3 py-1.5 gap-2 transition-all duration-300">
+                            <input type="text" placeholder="Search..." class="outline-none bg-transparent text-md 
+                            text-white placeholder-white/50 flex-1 w-full">
+                            <i class="bi bi-search text-white text-lg"></i>
+                        </div>
+                    </div>
+
+                    <!-- Search field — mobile only -->
+                    <div id="menu-search-wrap" class="flex md:hidden items-center px-3 border-r border-white/20">
+                        <div class="flex items-center border border-transparent focus-within:border-white rounded-lg 
+                        px-3 gap-2 transition-all duration-300">
+                            <input type="text" class="outline-none bg-transparent text-sm w-28 transition-all 
+                            duration-300 text-white placeholder-white/50">
+                            <i class="bi bi-search text-white text-lg"></i>
+                        </div>
+                    </div>
+
+                    <!-- Close button -->
+                    <button id="close-menu" class="bg-white px-4 flex items-center justify-center self-stretch shrink-0 
+                    ml-auto">
+                        <i class="bi bi-x text-4xl text-[#5E48DB]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Menu links -->
+            <div class="flex flex-col px-5 md:px-10 mt-14 md:mt-20 mb-[120px] md:mb-[170px] gap-5 md:gap-9">
+                <a href="index.html#about" class="menu-item text-white text-2xl md:text-4xl font-semibold cursor-pointer">
+                    About Pickt
+                </a>
+                <a href="index.html#faqs" class="menu-item text-white text-2xl md:text-4xl font-semibold cursor-pointer">
+                    FAQs
+                </a>
+                <a onclick="handleNavClick('top')" class="menu-item text-white text-2xl md:text-4xl font-semibold 
+                cursor-pointer">
+                    Contact us
+                </a>
+                <div class="flex gap-4 mt-12 justify-center">
+                    <a href="sign-in.html">
+                        <button class="menu-item border border-white/60 text-white rounded-xl py-3 md:py-4 px-[51px] 
+                        md:px-[75px] text-sm md:text-md font-semibold text-nowrap">
+                            Log In
+                        </button>
+                    </a>
+                    <a href="sign-up.html" class="text-center">
+                        <button class="menu-item border border-white text-[#5E48DB] bg-white rounded-xl py-3 md:py-4 
+                        px-[51px] md:px-[75px] text-md font-semibold text-nowrap">
+                            Sign Up
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom: socials + links -->
+            <div class="menu-item px-8 pb-10 md:pb-20 flex flex-col items-center gap-6">
+                <div class="flex gap-5">
+                    <a href="https://www.linkedin.com/company/pickt/">
+                        <i class="bi bi-linkedin text-white text-xl md:text-2xl"></i>
+                    </a>
+                    <a href="https://x.com/pickthq?s=21">
+                        <i class="bi bi-twitter text-white text-xl md:text-2xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/pickthq?igsh=aW8ycm50a3dyeDl0">
+                        <i class="bi bi-instagram text-white text-xl md:text-2xl"></i>
+                    </a>
+                    <a href="http://www.youtube.com/@pickthq">
+                        <i class="bi bi-youtube text-white text-xl md:text-2xl"></i>
+                    </a>
+                </div>
+                <div class="flex gap-6">
+                    <a href="" class="text-white text-sm md:text-2xl opacity-70">
+                        Terms of Service
+                    </a>
+                    <a href="" class="text-white text-sm md:text-2xl opacity-70">
+                        Privacy Policy
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Get in touch -->
+    <section id="contact" class="flex flex-col items-center justify-center px-4 md:px-16 pt-28 md:pt-36 lg:pt-44 xl:pt-56 
+    overflow-hidden">
+
+        <!-- heading -->
+        <div class="-ml-24 md:-ml-[350px] lg:-ml-[400px] xl:-ml-64">
+            <h2 class="text-4xl md:text-5xl xl:text-7xl font-bold text-[#1e1e3f] mb-5">
+                Get in touch
+            </h2>
+            <p class="text-[#6D6C75] text-lg">
+                You can reach us via our mail
+            </p>
+            <a href="mailto:hello@pickt.io" class="text-[#F8AB11] font-medium text-lg hover:underline">
+                hello@pickt.io
+            </a>
+        </div>
+
+        <!-- form card -->
+        <div class="bg-[#F9F9FA] rounded-2xl md:rounded-3xl px-5 md:px-12 xl:px-14 py-7 md:py-14 mt-9 md:mt-12 w-full 
+        max-w-2xl">
+            <form class="flex flex-col gap-6">
+
+                <!-- Name -->
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm text-[#6D6C75]">
+                        Name
+                    </label>
+                    <input type="text" placeholder="Adeshina Ogbelade" name="name" class="w-full bg-[#F9F9FA] border 
+                    border-gray-200 rounded-xl px-4 py-3.5 placeholder-[#6D6C75] text-sm outline-none focus:border-[#5b4fcf] 
+                    transition duration-200">
+                </div>
+
+                <!-- Email -->
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm text-[#6D6C75]">
+                        Email
+                    </label>
+                    <input type="email" placeholder="example@gmail.com" name="email" class="w-full bg-[#F9F9FA] border 
+                    border-gray-200 rounded-xl px-4 py-3.5 placeholder-[#6D6C75] text-sm outline-none focus:border-[#5b4fcf] 
+                    transition duration-200" required>
+                </div>
+
+                <!-- Message -->
+                <div class="flex flex-col gap-2 mb-5 md:mb-10">
+                    <label class="text-sm text-[#6D6C75]">
+                        How can we help?
+                    </label>
+                    <textarea placeholder="Tell us what you would like to know" class="w-full bg-[#F9F9FA] border border-gray-200
+                        rounded-xl px-1 py-3.5 h-48 md:h-60 placeholder-[#6D6C75] text-sm outline-none focus:border-[#5b4fcf] 
+                        transition duration-200 resize-none">
+                    </textarea>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="w-full bg-[#5b4fcf] hover:bg-[#4c41b8] text-white font-semibold 
+                rounded-xl py-3.5 transition-colors duration-200 text-base cursor-pointer">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative bg-[#6c5ce7] mt-20 md:mt-28 xl:mt-60">
+        <div class="flex flex-col items-center justify-center overflow-hidden px-6 pt-16 pb-5 lg:pb-12">
+            <div class="absolute bottom-0 left-0 w-full h-full pointer-events-none">
+                <svg viewBox="0 0 1440 420" preserveAspectRatio="none" class="absolute bottom-0 left-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="200" cy="380" rx="420" ry="180" fill="#fff" opacity="0.15"/>
+                    <ellipse cx="1300" cy="320" rx="380" ry="160" fill="#fff" opacity="0.12"/>
+                </svg>
+            </div>
+            <h2 class="relative z-10 text-white text-center text-xl md:text-3xl font-semibold md:max-w-2xl leading-snug 
+            mb-8">
+                Would you like to get updates on Pickt delivered straight to your email? Subscribe now.
+            </h2>
+            <div class="relative z-10 flex items-center w-full max-w-sm border border-white/30 rounded-2xl 
+            overflow-hidden mb-12 backdrop-blur-sm">
+                <input type="email" name="email" placeholder="Email" class="flex-1 bg-transparent text-white 
+                placeholder-white/60 pl-5 pr-3 py-3 text-lg outline-none" required>
+                <button class="m-2 bg-[#FFFFFF80] hover:bg-white/30 transition-colors rounded-xl px-2 py-1 flex 
+                items-center justify-center">
+                    <i class="bi bi-arrow-right text-white text-3xl"></i>
+                </button>
+            </div>
+            <nav class="relative z-10 flex gap-7 md:gap-10 mt-8 md:mt-12 mb-8">
+                <a href="index.html#about" class="relative group text-white hover:text-white text-lg transition-colors">
+                    About Pickt
+                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-white transition-all duration-300 
+                    group-hover:w-full"></span>
+                </a>
+                <a href="index.html#faqs" class="relative group text-white hover:text-white text-lg transition-colors">
+                    FAQs
+                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-white transition-all duration-300 
+                    group-hover:w-full"></span>
+                </a>
+                <a href="#top" class="relative group text-white hover:text-white text-lg transition-colors">
+                    Contact us
+                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-white transition-all duration-300 
+                    group-hover:w-full"></span>
+                </a>
+            </nav>
+            <div class="relative z-10 flex gap-4 mt-4 md:mt-6 mb-10">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/company/pickt/" class="w-9 h-9 rounded-lg border border-white/30 flex 
+                items-center justify-center hover:bg-white/20 transition-colors">
+                    <svg class="xl:w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 
+                        6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" 
+                        r="2"/>
+                    </svg>
+                </a>
+                <!-- Twitter/X -->
+                <a href="https://x.com/pickthq?s=21" class="w-9 h-9 rounded-lg border border-white/30 flex items-center 
+                justify-center hover:bg-white/20 transition-colors">
+                    <i class="bi bi-twitter text-white xl:text-xl"></i>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/pickthq?igsh=aW8ycm50a3dyeDl0" class="w-9 h-9 rounded-lg border 
+                border-white/30 flex items-center justify-center hover:bg-white/20 transition-colors">
+                    <svg class="xl:w-6 xl:h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" 
+                        cy="6.5" r="0.5" fill="currentColor"/>
+                    </svg>
+                </a>
+                <!-- YouTube -->
+                <a href="http://www.youtube.com/@pickthq" class="w-9 h-9 rounded-lg border border-white/30 flex 
+                items-center justify-center hover:bg-white/20 transition-colors">
+                    <i class="bi bi-youtube text-white xl:text-xl"></i>
+                </a>
+            </div>
+            <div class="relative z-10 text-white font-black text-7xl md:text-8xl tracking-wide">
+                Pickt.
+            </div>
+            <div class="text-white/60 text-sm">
+                <i class="bi bi-c-circle"></i>
+                2023 Pickt, Inc.
+            </div>
+        </div>
+
+        <div class="flex space-x-5 px-5 md:px-10 lg:px-24 pb-24 lg:pb-14 text-sm xl:text-md text-white/60 justify-center 
+        lg:justify-start">
+            <a href="" class="relative group">
+                Terms of Services
+                <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-white/60 transition-all duration-300 
+                group-hover:w-full"></span>
+            </a>
+            <a href="" class="relative group">
+                Privacy Policy
+                <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-white/60 transition-all duration-300 
+                group-hover:w-full"></span>
+            </a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+    <!-- search bar words animation -->
+    <script>
+        const words = ['technologists', 'Spiritual leaders', 'athletes', 'politicians', 'artists', 'entertainers', 
+        'educators', 'writers', 'entrepreneurs', 'scientists'];
+        let index = 0;
+        let cycleInterval = null;
+        let typeInterval = null;
+        let eraseInterval = null;
+
+        const el = document.getElementById('dynamic-word');
+        const placeholder = document.getElementById('placeholder-text');
+        const input = document.getElementById('searchInput');
+
+        // Hide placeholder when user types
+        input.addEventListener('input', () => {
+            placeholder.style.display = input.value ? 'none' : 'flex';
+        });
+
+        function typeWord(word) {
+            el.textContent = '';
+            let i = 0;
+            clearInterval(typeInterval);
+            typeInterval = setInterval(() => {
+            el.textContent += word[i++];
+            if (i >= word.length) clearInterval(typeInterval);
+            }, 60);
+        }
+
+        function eraseWord(cb) {
+            clearInterval(eraseInterval);
+            eraseInterval = setInterval(() => {
+            el.textContent = el.textContent.slice(0, -1);
+            if (!el.textContent.length) {
+                clearInterval(eraseInterval);
+                cb();
+            }
+            }, 40);
+        }
+
+        function cycle() {
+            eraseWord(() => {
+            index = (index + 1) % words.length;
+            setTimeout(() => typeWord(words[index]), 200);
+            });
+        }
+
+        // Clear any existing interval before starting a new one
+        clearInterval(cycleInterval);
+        cycleInterval = setInterval(cycle, 2500);
+    </script>
+
+    <!-- Menu button -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const hamburger = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeBtn = document.getElementById('close-menu');
+        const menuItems = mobileMenu.querySelectorAll('.menu-item');
+        const menuSearchWrap = document.getElementById('menu-search-wrap');
+        const menuSearchInput = document.querySelector('#menu-search-wrap input');
+
+        // REUSABLE CLOSE FUNCTION
+        function closeMenu() {
+        hamburger.classList.remove('active');
+        menuSearchInput.value = '';
+        menuSearchInput.blur();
+
+        // only hide search wrap on mobile, let Tailwind handle md+
+        if (window.innerWidth < 768) {
+            menuSearchWrap.style.display = 'none';
+        }
+
+        menuItems.forEach(function(el) {
+            el.classList.remove('animate');
+        });
+
+        mobileMenu.style.opacity = '0';
+        mobileMenu.style.pointerEvents = 'none';
+
+        setTimeout(function() {
+            mobileMenu.style.display = 'none';
+        }, 300);
+        }
+
+        // OPEN
+        hamburger.addEventListener('click', function () {
+        hamburger.classList.add('active');
+
+        // only show search wrap on mobile, let Tailwind handle md+
+        if (window.innerWidth < 768) {
+            menuSearchWrap.style.display = 'flex';
+        }
+
+        menuItems.forEach(function(el) {
+            el.classList.remove('animate');
+        });
+
+        mobileMenu.style.opacity = '0';
+        mobileMenu.style.pointerEvents = 'none';
+        mobileMenu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+
+        setTimeout(function() {
+            mobileMenu.style.opacity = '1';
+            mobileMenu.style.pointerEvents = 'all';
+        }, 10);
+
+        menuItems.forEach(function(el, index) {
+            setTimeout(function() {
+            el.classList.add('animate');
+            }, 300 + (index * 200));
+        });
+        });
+
+        // CLOSE button
+        closeBtn.addEventListener('click', function () {
+        document.body.style.overflow = '';
+        closeMenu();
+        });
+
+        // CLOSE on nav link click
+        window.handleNavClick = function(id) {
+        document.body.style.overflow = '';
+        closeMenu();
+        setTimeout(function() {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }, 320);
+        }
+    });
+    </script>
+
+    <!-- handnavclick -->
+    <script>
+        function handleNavClick(id) {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.add('opacity-0', 'pointer-events-none');
+        menu.classList.remove('opacity-100', 'pointer-events-auto');
+
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>

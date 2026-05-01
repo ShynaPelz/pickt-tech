@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pickt | Sign-up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="img/Clip path group.png">  
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="bootstrap-icons-1.11.3/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+</head>
+<body class="lg:flex bg-white">
+
+    <!-- LEFT PANEL -->
+    <section class="w-[45%] flex-shrink-0 h-screen fixed left-0 top-0 bg-[#5b4fcf] flex flex-col pt-10 
+    overflow-hidden hidden lg:flex">
+
+        <div class="pl-24">
+            <div class="flex items-center gap-2 mt-16 mb-1">
+                <img src="img/logotext.svg.png" alt="logo" class="w-48 brightness-0 invert">
+            </div>
+            <p class="text-white text-lg leading-tight">
+                meet, talk, know, thrive!
+            </p>
+        </div>
+
+        <!-- Avatar image -->
+        <div class="mt-auto w-full">
+            <img src="img/auth.fbc6a50f.svg" alt="img" class="lg:h-[1000px] lg:mb-96 xl:mt-28 xl:h-[550px]">
+        </div>
+    </section>
+
+    <!-- RIGHT PANEL -->
+    <section class=" lg:ml-[45%] lg:w-[55%] h-screen overflow-y-auto">
+        <div class="min-h-screen flex items-center justify-center px-5 md:px-12 lg:px-12 py-16">
+            <div class="w-full lg:max-w-lg">
+                <div class="flex items-center justify-center gap-2 mb-6 block lg:hidden">
+                    <img src="img/logotext.svg.png" alt="logo" class="w-24 lg:w-48">
+                </div>
+                <img src="img/auth.fbc6a50f.svg" alt="img" class="w-[80px] h-[80px]  lg:mb-96 xl:mt-28 rounded-full
+                bg-[#5E48DB] block lg:hidden mx-auto">
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mt-5 mb-8 text-center">
+                    Sign up
+                </h1>
+
+                <!-- Social Buttons -->
+                <div class="flex flex-col gap-3 mb-6">
+                    <button class="social-btn w-full flex items-center justify-center gap-3 border border-gray-200 rounded-xl 
+                    py-3 px-6 text-gray-700 font-medium bg-white">
+                        <svg width="20" height="20" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        Continue with Google
+                    </button>
+                    <button class="social-btn w-full flex items-center justify-center gap-3 border border-gray-200 rounded-xl py-3 
+                    px-4 text-gray-700 font-medium bg-white">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        Continue with LinkedIn
+                    </button>
+                </div>
+
+                <!-- Divider -->
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="divider-line"></div>
+                        <span class="text-gray-400 text-sm">
+                            or
+                        </span>
+                    <div class="divider-line"></div>
+                </div>
+
+                <!-- Email -->
+                <form action="">
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-1.5">
+                            Email address
+                        </label>
+                        <input type="email" name="Email" placeholder="Email address" class="w-full border border-gray-200
+                        rounded-xl px-4 py-3 text-gray-800 placeholder-gray-400 text-sm bg-white transition 
+                        outline-[#5E48DB]" required>
+                        </div>
+
+                    <!-- Password -->
+                    <div class="mb-3">
+                        <label class="block text-sm font-medium text-gray-700 mb-1.5">
+                            Password
+                        </label>
+                        <div class="relative">
+                            <input type="password" placeholder="Password" id="pwdInput" class="w-full border border-gray-200 rounded-xl 
+                            px-4 py-3 pr-12 text-gray-800 placeholder-gray-400 text-sm bg-white transition outline-[#5E48DB]" required>
+
+                            <button onclick="togglePwd()" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 
+                            hover:text-gray-600">
+                                <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" 
+                                viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" 
+                            stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 4.411m0 0L21 21"/></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3 pt-4 pb-10">
+                        <input type="checkbox" class="mt-1 w-4 h-4 accent-[#5E48DB] cursor-pointer shrink-0">
+                        <p class="text-sm text-gray-500">
+                            I agree to Pickt's 
+                            <a href="#" class="text-[#5b4fcf] font-medium hover:underline">
+                                Terms of Service.
+                            </a> 
+                            and 
+                            <a href="#" class="text-[#5b4fcf] font-medium hover:underline">
+                                Privacy policy
+                            </a> 
+                            which includes my consent to recieve marketing information from Pickt. I can unsubscribe 
+                            from marketing communications at any time
+                        </p>
+                    </div>
+
+                    <!-- Sign in button -->
+                    <input type="submit" value="Sign up" class="w-full bg-[#5b4fcf] hover:bg-[#4c41b8] text-white 
+                    font-semibold rounded-xl py-3.5 transition-colors duration-200 text-base mb-6 cursor-pointer">
+
+                    <!-- Register link -->
+                    <p class="text-center text-sm text-gray-500">
+                        Already have an account?
+                        <a href="sign-in.html" class="text-[#5b4fcf] font-semibold hover:underline">
+                            Sign in
+                        </a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    //Password hide and see text script
+    <script>
+    function togglePwd() {
+        const input = document.getElementById('pwdInput');
+        input.type = input.type === 'password' ? 'text' : 'password';
+    }
+    </script>
+
+</body>
+</html>
