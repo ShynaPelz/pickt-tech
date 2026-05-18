@@ -17,15 +17,15 @@
 
         <!-- Logo + desktop search -->
         <div class="flex items-center py-5 pl-5 md:pl-10 lg:px-16 shrink-0">
-            <a href="#top">
+            <a href="index.html">
                 <img src="img/logotext.svg.png" alt="Logo" class="w-20 md:w-24 lg:w-32 xl:w-28">
             </a>
             <div class="hidden lg:flex xl:flex items-center px-4">
-                <div class="relative flex items-center lg:w-56 xl:w-80 border border-transparent 
-                focus-within:border-[#5E48DB] rounded-xl px-3 lg:py-1.5 xl:py-2 gap-2 transition-all duration-300">
+                <div class="relative flex items-center lg:w-56 xl:w-80 border border-transparent focus-within:border-[#5E48DB] 
+                rounded-xl px-3 lg:py-1.5 xl:py-2 gap-2 transition-all duration-300">
                     <i class="bi bi-search text-[#5E48DB] text-lg"></i>
                     <input type="text" id="searchInput" class="outline-none bg-transparent text-md flex-1">
-                    <span id="placeholder-text" class="absolute pointer-events-none text-gray-400 text-lg pl-7">
+                    <span id="placeholder-text" class="absolute pointer-events-none text-gray-400 lg:text-sm xl:text-lg pl-7">
                         search for <span id="dynamic-word" class="text-[#5E48DB]">technologists</span>
                     </span>
                 </div>
@@ -35,20 +35,21 @@
         <!-- Desktop nav links -->
         <div class="hidden lg:flex lg:space-x-5 xl:space-x-7 items-center py-5 pr-10 lg:pr-16 font-medium ml-auto shrink-0">
             <div class="relative group">
-                <a href="#about" class="text-nowrap lg:text-md xl:text-lg">
+                <a href="index.html#about" class="text-nowrap lg:text-md xl:text-lg">
                     About Pickt
-                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 group-hover:w-full"></span>
+                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 
+                    group-hover:w-full"></span>
                 </a>
             </div>
             <div class="relative group">
-                <a href="#faqs" class="text-nowrap text-lg">
+                <a href="index.html#faqs" class="text-nowrap text-lg">
                     FAQs
                     <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 
                     group-hover:w-full"></span>
                 </a>
             </div>
             <div class="relative group">
-                <a href="contact.html" class="text-nowrap text-lg">
+                <a href="#top" class="text-nowrap text-lg">
                     Contact us
                     <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-black transition-all duration-300 
                     group-hover:w-full"></span>
@@ -60,7 +61,7 @@
             <div class="relative group">
                 <a href="sign-in.html" class="text-nowrap text-lg text-[#5E48DB]">
                     Log in
-                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-[#5E48DB] transition-all duration-300
+                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-[#5E48DB] transition-all duration-300 
                     group-hover:w-full"></span>
                 </a>
             </div>
@@ -87,22 +88,17 @@
             </div>
 
             <!-- Search — mobile only -->
-            <div class="flex md:hidden items-center px-1 ml-auto">
-                <div class="flex flex-row-reverse items-center border px-2 border-transparent rounded-lg
-                focus-within:border-[#5E48DB]">
-                    <button type="button" id="mobileSearchIcon" 
-                    class="flex items-center justify-center w-10 h-10 text-[#5E48DB]">
-                        <i class="bi bi-search text-lg pointer-events-none"></i>
-                    </button>
-                    <input id="mobileSearchInput" type="text" placeholder="Search..." 
-                    class="outline-none bg-transparent text-sm transition-all duration-300" 
-                    style="width:0; opacity:0; transition: width 0.3s ease, opacity 0.3s ease;">
+            <div class="flex md:hidden items-center px-3 border-r border-gray-200">
+                <div class="flex items-center border border-transparent focus-within:border-[#5E48DB] rounded-lg px-3 gap-2 
+                transition-all duration-300">
+                    <input type="text" class="outline-none bg-transparent text-md w-28 focus:w-28 transition-all 
+                    duration-300">
+                    <i class="bi bi-search text-[#5E48DB] text-lg"></i>
                 </div>
             </div>
 
             <!-- Hamburger -->
-            <button id="hamburger-btn" 
-            class="bg-[#5E48DB] px-5 flex flex-col justify-center gap-1.5 self-stretch shrink-0">
+            <button id="hamburger-btn" class="bg-[#5E48DB] px-5 flex flex-col justify-center gap-1.5 self-stretch shrink-0">
                 <span class="block w-8 h-0.5 bg-white/60"></span>
                 <span class="block w-8 h-0.5 bg-white/60"></span>
             </button>
@@ -119,7 +115,7 @@
                         <img src="img/logotext.svg.png" alt="Logo" class="w-20 md:w-28 brightness-0 invert">
                     </a>
                 </div>
-                <div class="flex items-stretch flex-1 min-w-0">
+                <div class="flex items-stretch flex-1">
 
                     <!-- Search bar — iPad mini only -->
                     <div class="hidden md:flex flex-1 items-center px-4">
@@ -131,17 +127,13 @@
                         </div>
                     </div>
 
-                    <!-- Search — mobile only inside menu -->
-                    <div id="menu-search-wrap" class="flex md:hidden items-center px-1">
-                        <div class="flex flex-row-reverse items-center border px-2 border-transparent rounded-lg
-                        focus-within:border-white/60">
-                            <button type="button" id="menuSearchIcon" 
-                            class="flex items-center justify-center w-10 h-10 text-white">
-                                <i class="bi bi-search text-lg pointer-events-none"></i>
-                            </button>
-                            <input id="menuSearchInput" type="text" placeholder="Search..." 
-                            class="outline-none bg-transparent text-sm text-white placeholder-white/50 transition-all 
-                            duration-300" style="width:0; opacity:0; transition: width 0.3s ease, opacity 0.3s ease;">
+                    <!-- Search field — mobile only -->
+                    <div id="menu-search-wrap" class="flex md:hidden items-center px-3 border-r border-white/20">
+                        <div class="flex items-center border border-transparent focus-within:border-white rounded-lg 
+                        px-3 gap-2 transition-all duration-300">
+                            <input type="text" class="outline-none bg-transparent text-sm w-28 transition-all 
+                            duration-300 text-white placeholder-white/50">
+                            <i class="bi bi-search text-white text-lg"></i>
                         </div>
                     </div>
 
@@ -155,15 +147,14 @@
 
             <!-- Menu links -->
             <div class="flex flex-col px-5 md:px-10 mt-14 md:mt-20 mb-[120px] md:mb-[170px] gap-5 md:gap-9">
-                <a onclick="handleNavClick('about')" class="menu-item text-white text-2xl md:text-4xl font-semibold 
-                cursor-pointer">
+                <a href="index.html#about" class="menu-item text-white text-2xl md:text-4xl font-semibold cursor-pointer">
                     About Pickt
                 </a>
-                <a onclick="handleNavClick('faqs')" class="menu-item text-white text-2xl md:text-4xl font-semibold 
-                cursor-pointer">
+                <a href="index.html#faqs" class="menu-item text-white text-2xl md:text-4xl font-semibold cursor-pointer">
                     FAQs
                 </a>
-                <a href="contact.html" class="menu-item text-white text-2xl md:text-4xl font-semibold cursor-pointer">
+                <a onclick="handleNavClick('top')" class="menu-item text-white text-2xl md:text-4xl font-semibold 
+                cursor-pointer">
                     Contact us
                 </a>
                 <div class="flex gap-4 mt-12 justify-center">
